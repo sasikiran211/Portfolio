@@ -4,113 +4,52 @@
 
 @layer base {
   body {
-    background-color: #000000;
-    color: #EBEBEB;
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
-  code, pre, .font-mono {
-    font-family: 'JetBrains Mono', monospace;
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* 60px Technical Grid Background */
-.bg-tech-grid {
-  background-size: 60px 60px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-}
-
-.bg-tech-dots {
-  background-image: radial-gradient(rgba(204, 255, 0, 0.12) 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-
-/* Custom Scrollbar - Obsidian & Neon Lime */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0C0C0C;
+  background: transparent;
 }
 
-::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #1C39BB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #CCFF00;
-  box-shadow: 0 0 10px #CCFF00;
+  background: #1C39BB;
 }
 
-/* Card 3D perspective container */
-.perspective-container {
-  perspective: 1200px;
+/* Smooth transition for theme switching */
+.theme-transition {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.card-tilt {
-  transform-style: preserve-3d;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+/* Subtle card styling */
+.pro-card {
+  @apply bg-white dark:bg-[#121214] border border-[#E5E7EB] dark:border-[rgba(255,255,255,0.08)] rounded-2xl transition-all duration-200;
 }
 
-.card-tilt:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(204, 255, 0, 0.15);
-}
-
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(12, 12, 12, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-panel-interactive {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.glass-panel-interactive:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(204, 255, 0, 0.35);
-}
-
-/* Glowing text helper */
-.glow-text-lime {
-  text-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
-}
-
-.glow-text-emerald {
-  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
-}
-
-/* Pulsing beacon */
-@keyframes beaconPulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 0.4;
-  }
-}
-
-.animate-beacon {
-  animation: beaconPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+.pro-card:hover {
+  @apply border-[#CBD5E1] dark:border-[rgba(255,255,255,0.18)] shadow-sm;
 }

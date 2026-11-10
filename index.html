@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth bg-black text-[#EBEBEB]">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sasikiran Kakumani | Interactive 3D Portfolio & Technical Architecture</title>
+    <title>Sasikiran Kakumani | Portfolio & Technical Showcase</title>
+
+    <!-- Theme Initialization Script (Prevents flash of unstyled theme) -->
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     
-    <!-- Technical Meta Tags -->
-    <meta name="description" content="Portfolio of Sasikiran Kakumani — B.Tech CSE (AI & ML) at VVITU. Focused on Data Analytics, Data Science, and Machine Learning systems." />
-    <meta name="keywords" content="Sasikiran Kakumani, Data Analytics, Data Science, AI/ML, Python, SQL, Power BI, 3D Web, VVITU, Take U Forward" />
+    <!-- Professional Meta Tags -->
+    <meta name="description" content="Sasikiran Kakumani — B.Tech Computer Science (AI & ML) at VVITU. Focused on Data Analytics, Data Science, and Machine Learning systems." />
+    <meta name="keywords" content="Sasikiran Kakumani, Data Analyst, Data Science, AI ML, Portfolio, VVITU, Python, SQL, Power BI, Problem Solving" />
     <meta name="author" content="Sasikiran Kakumani" />
-    <meta name="theme-color" content="#0C0C0C" />
+    <meta name="theme-color" content="#1C39BB" />
     
-    <!-- Open Graph / Meta -->
+    <!-- Open Graph / Social -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Sasikiran Kakumani | Interactive 3D Portfolio" />
-    <meta property="og:description" content="Building with Data. Exploring AI. Interactive futuristic tech portfolio." />
+    <meta property="og:title" content="Sasikiran Kakumani | Portfolio & Technical Showcase" />
+    <meta property="og:description" content="B.Tech CSE (AI & ML) undergraduate at VVITU focused on Data Analytics, Data Science, and Machine Learning." />
     <meta property="og:site_name" content="Sasikiran Kakumani Portfolio" />
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sasikiran Kakumani | Interactive 3D Portfolio" />
-    <meta name="twitter:description" content="Building with Data. Exploring AI. B.Tech CSE (AI & ML) undergraduate." />
+    <meta name="twitter:title" content="Sasikiran Kakumani | Portfolio & Technical Showcase" />
+    <meta name="twitter:description" content="B.Tech CSE (AI & ML) undergraduate at VVITU focused on Data Analytics, Data Science, and Machine Learning." />
     
-    <!-- Custom Favicon SVG: Obsidian & Neon Lime -->
+    <!-- Custom Favicon SVG: Persian Blue Monogram -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google Fonts: Space Grotesk & JetBrains Mono -->
+    <!-- Google Fonts: Manrope (Headings) & Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -49,7 +64,7 @@
       }
     </script>
   </head>
-  <body class="bg-black text-[#EBEBEB] antialiased font-sans selection:bg-[#CCFF00] selection:text-black min-h-screen overflow-x-hidden">
+  <body class="bg-[#FAFAFB] dark:bg-[#080808] text-[#080808] dark:text-[#F3F4F6] antialiased font-sans selection:bg-[#1C39BB] selection:text-white transition-colors duration-200 min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

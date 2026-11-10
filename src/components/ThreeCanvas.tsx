@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export const ThreeCanvas: React.FC = () => {
+interface ThreeCanvasProps {
+  className?: string;
+}
+
+export const ThreeCanvas: React.FC<ThreeCanvasProps> = ({ className = 'h-72 w-full' }) => {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -9,13 +13,13 @@ export const ThreeCanvas: React.FC = () => {
     if (!container) return;
 
     // Dimensions
-    const width = container.clientWidth || 500;
-    const height = container.clientHeight || 500;
+    const width = container.clientWidth || 400;
+    const height = container.clientHeight || 300;
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
-    camera.position.z = 7;
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    camera.position.z = 6;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(width, height);
@@ -26,45 +30,53 @@ export const ThreeCanvas: React.FC = () => {
     const coreGroup = new THREE.Group();
     scene.add(coreGroup);
 
-    // 1. Central Wireframe Icosahedron (Data Core)
-    const coreGeo = new THREE.IcosahedronGeometry(1.6, 1);
+    // Detect if dark mode is active
+    const isDark = document.documentElement.classList.contains('dark');
+
+    // Persian Blue 0x1C39BB, Secondary accent
+    const primaryColor = 0x1C39BB;
+    const secondaryColor = isDark ? 0x60A5FA : 0x2563EB;
+    const particleColor = isDark ? 0x93C5FD : 0x1C39BB;
+
+    // 1. Central Wireframe Icosahedron
+    const coreGeo = new THREE.IcosahedronGeometry(1.4, 1);
     const coreMat = new THREE.MeshBasicMaterial({
-      color: 0xCCFF00,
+      color: primaryColor,
       wireframe: true,
       transparent: true,
-      opacity: 0.85
+      opacity: isDark ? 0.8 : 0.85,
     });
     const coreMesh = new THREE.Mesh(coreGeo, coreMat);
     coreGroup.add(coreMesh);
 
-    // 2. Inner Emerald Octahedron
-    const innerGeo = new THREE.OctahedronGeometry(0.9, 0);
+    // 2. Inner Octahedron
+    const innerGeo = new THREE.OctahedronGeometry(0.8, 0);
     const innerMat = new THREE.MeshBasicMaterial({
-      color: 0x10B981,
+      color: secondaryColor,
       wireframe: true,
       transparent: true,
-      opacity: 0.95
+      opacity: 0.7,
     });
     const innerMesh = new THREE.Mesh(innerGeo, innerMat);
     coreGroup.add(innerMesh);
 
-    // 3. Orbital Ring 1 (Torus)
-    const ringGeo1 = new THREE.TorusGeometry(2.3, 0.02, 16, 100);
+    // 3. Orbital Ring 1
+    const ringGeo1 = new THREE.TorusGeometry(2.0, 0.015, 16, 100);
     const ringMat1 = new THREE.MeshBasicMaterial({
-      color: 0xCCFF00,
+      color: primaryColor,
       transparent: true,
-      opacity: 0.6
+      opacity: 0.5,
     });
     const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
     ring1.rotation.x = Math.PI / 3;
     coreGroup.add(ring1);
 
-    // 4. Orbital Ring 2 (Emerald Torus)
-    const ringGeo2 = new THREE.TorusGeometry(2.8, 0.015, 16, 100);
+    // 4. Orbital Ring 2
+    const ringGeo2 = new THREE.TorusGeometry(2.4, 0.01, 16, 100);
     const ringMat2 = new THREE.MeshBasicMaterial({
-      color: 0x10B981,
+      color: secondaryColor,
       transparent: true,
-      opacity: 0.45
+      opacity: 0.4,
     });
     const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
     ring2.rotation.y = Math.PI / 4;
@@ -72,25 +84,25 @@ export const ThreeCanvas: React.FC = () => {
     coreGroup.add(ring2);
 
     // 5. Surrounding Particle Cloud
-    const particleCount = 280;
+    const particleCount = 180;
     const particlePositions = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount * 3; i += 3) {
-      particlePositions[i] = (Math.random() - 0.5) * 8;
-      particlePositions[i + 1] = (Math.random() - 0.5) * 8;
-      particlePositions[i + 2] = (Math.random() - 0.5) * 8;
+      particlePositions[i] = (Math.random() - 0.5) * 7;
+      particlePositions[i + 1] = (Math.random() - 0.5) * 7;
+      particlePositions[i + 2] = (Math.random() - 0.5) * 7;
     }
     const particleGeo = new THREE.BufferGeometry();
     particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
     const particleMat = new THREE.PointsMaterial({
-      color: 0xCCFF00,
-      size: 0.035,
+      color: particleColor,
+      size: 0.03,
       transparent: true,
-      opacity: 0.6
+      opacity: isDark ? 0.6 : 0.45,
     });
     const particlePoints = new THREE.Points(particleGeo, particleMat);
     coreGroup.add(particlePoints);
 
-    // Mouse Tracking for Interactive Parallax
+    // Interactive Mouse Tracking
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
@@ -98,86 +110,63 @@ export const ThreeCanvas: React.FC = () => {
 
     const onMouseMove = (event: MouseEvent) => {
       const rect = container.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      targetX = x * 0.8;
-      targetY = y * 0.8;
+      const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+      targetX = x * 0.4;
+      targetY = y * 0.4;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    container.addEventListener('mousemove', onMouseMove);
 
     // Resize Handler
     const handleResize = () => {
       if (!container) return;
-      const newW = container.clientWidth;
-      const newH = container.clientHeight;
-      camera.aspect = newW / newH;
+      const newWidth = container.clientWidth;
+      const newHeight = container.clientHeight;
+      camera.aspect = newWidth / newHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(newW, newH);
+      renderer.setSize(newWidth, newHeight);
     };
 
     window.addEventListener('resize', handleResize);
 
     // Animation Loop
-    let animationFrameId: number;
-    let clock = new THREE.Clock();
+    let animId: number;
+    const clock = new THREE.Clock();
 
     const animate = () => {
-      animationFrameId = requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
       const elapsedTime = clock.getElapsedTime();
 
-      // Autonomous orbital rotations
-      coreMesh.rotation.x = elapsedTime * 0.25;
-      coreMesh.rotation.y = elapsedTime * 0.35;
-
-      innerMesh.rotation.x = -elapsedTime * 0.4;
-      innerMesh.rotation.y = -elapsedTime * 0.5;
-
+      // Continuous slow rotation
+      coreMesh.rotation.y = elapsedTime * 0.25;
+      coreMesh.rotation.x = elapsedTime * 0.15;
+      innerMesh.rotation.y = -elapsedTime * 0.35;
       ring1.rotation.z = elapsedTime * 0.2;
-      ring2.rotation.x = elapsedTime * 0.15;
-      ring2.rotation.y = elapsedTime * 0.25;
+      ring2.rotation.z = -elapsedTime * 0.15;
+      particlePoints.rotation.y = elapsedTime * 0.08;
 
-      particlePoints.rotation.y = elapsedTime * 0.05;
-
-      // Mouse dampening parallax
+      // Smooth mouse follow
       currentX += (targetX - currentX) * 0.05;
       currentY += (targetY - currentY) * 0.05;
-
-      coreGroup.rotation.y = currentX;
-      coreGroup.rotation.x = currentY;
+      coreGroup.rotation.y = currentX + elapsedTime * 0.1;
+      coreGroup.rotation.x = -currentY;
 
       renderer.render(scene, camera);
     };
 
     animate();
 
-    // Cleanup
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('mousemove', onMouseMove);
+      cancelAnimationFrame(animId);
+      container.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('resize', handleResize);
-      if (container.contains(renderer.domElement)) {
+      if (renderer.domElement && container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      coreGeo.dispose();
-      innerGeo.dispose();
-      ringGeo1.dispose();
-      ringGeo2.dispose();
-      particleGeo.dispose();
-      coreMat.dispose();
-      innerMat.dispose();
-      ringMat1.dispose();
-      ringMat2.dispose();
-      particleMat.dispose();
     };
   }, []);
 
-  return (
-    <div
-      ref={mountRef}
-      className="w-full h-[400px] sm:h-[480px] lg:h-[560px] relative cursor-grab active:cursor-grabbing flex items-center justify-center"
-      aria-label="Interactive 3D Technology Visual"
-    />
-  );
+  return <div ref={mountRef} className={`${className} flex items-center justify-center`} />;
 };

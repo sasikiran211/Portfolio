@@ -14,7 +14,7 @@ export const Certifications: React.FC = () => {
     'SQL',
     'AI and Generative AI',
     'Software Development',
-    'Programming Certifications'
+    'Programming Certifications',
   ];
 
   const filteredCerts = certificatesData.filter((c) => {
@@ -28,32 +28,29 @@ export const Certifications: React.FC = () => {
   });
 
   return (
-    <section id="certificates" className="py-20 relative overflow-hidden bg-[#0C0C0C]/50 border-t border-white/5">
+    <section id="certificates" className="py-20 relative overflow-hidden bg-neutral-50/50 dark:bg-black border-t border-neutral-200/80 dark:border-white/5">
       
-      {/* Background Dots */}
-      <div className="absolute inset-0 bg-tech-dots opacity-20 pointer-events-none" />
-
       <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center space-x-2 text-xs font-mono text-[#CCFF00] tracking-widest mb-2 uppercase">
+            <div className="inline-flex items-center space-x-2 text-xs font-heading font-semibold text-[#1C39BB] dark:text-blue-400 tracking-wider mb-2 uppercase">
               <Award className="w-3.5 h-3.5" />
-              <span>[SECTION // 05 &bull; VERIFIED ACCREDITATIONS]</span>
+              <span>Verified Credentials</span>
             </div>
-            <h2 className="font-sans text-3xl sm:text-5xl font-extrabold text-[#EBEBEB] tracking-tight">
+            <h2 className="font-heading text-3xl sm:text-5xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
               Certifications & Industry Credentials
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-[#EBEBEB]/70 leading-relaxed font-sans">
+            <p className="mt-3 text-base sm:text-lg text-neutral-600 dark:text-neutral-300 leading-relaxed font-sans">
               Searchable catalog of standardized assessments, enterprise workshops, and specialized technical curricula.
             </p>
           </div>
 
           <div>
-            <span className="inline-flex items-center px-4 py-2 rounded-xl text-xs font-mono bg-white/[0.03] border border-white/10 text-white shadow-sm">
-              <ShieldCheck className="w-4 h-4 mr-2 text-[#10B981]" />
-              {certificatesData.length} VERIFIED CREDENTIALS
+            <span className="inline-flex items-center px-4 py-2 rounded-xl text-xs font-sans bg-white dark:bg-[#0C0C0C] border border-neutral-200 dark:border-white/10 text-neutral-800 dark:text-neutral-200 shadow-sm">
+              <ShieldCheck className="w-4 h-4 mr-2 text-emerald-600 dark:text-emerald-400" />
+              <strong className="font-semibold mr-1">{certificatesData.length}</strong> Verified Credentials
             </span>
           </div>
         </div>
@@ -63,18 +60,18 @@ export const Certifications: React.FC = () => {
           
           {/* Search Input */}
           <div className="relative max-w-md">
-            <Search className="w-4 h-4 text-white/40 absolute left-4 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-neutral-400 absolute left-4 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Filter by keyword (e.g. SQL, Python, AWS, Java)..."
-              className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-[#0C0C0C] border border-white/10 text-white text-xs font-mono placeholder:text-white/30 focus:outline-none focus:border-[#CCFF00] transition-colors"
+              placeholder="Search by topic (e.g. SQL, Python, AWS, Java)..."
+              className="w-full pl-11 pr-4 py-2.5 rounded-xl bg-white dark:bg-[#0C0C0C] border border-neutral-200 dark:border-white/10 text-neutral-900 dark:text-white text-xs font-sans placeholder:text-neutral-400 focus:outline-none focus:border-[#1C39BB] focus:ring-1 focus:ring-[#1C39BB] transition-colors shadow-sm"
             />
           </div>
 
           {/* Category Tabs */}
-          <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none font-mono text-xs">
+          <div className="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none text-xs font-heading">
             {categories.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
@@ -83,8 +80,8 @@ export const Certifications: React.FC = () => {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-xl whitespace-nowrap transition-all border ${
                     isSelected
-                      ? 'bg-[#CCFF00] text-black font-bold border-[#CCFF00] shadow-[0_0_15px_rgba(204,255,0,0.3)]'
-                      : 'bg-[#0C0C0C] text-white/70 hover:text-white hover:bg-white/5 border-white/10'
+                      ? 'bg-[#1C39BB] text-white font-semibold border-[#1C39BB] shadow-sm'
+                      : 'bg-white dark:bg-[#0C0C0C] text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white border-neutral-200 dark:border-white/10'
                   }`}
                 >
                   {cat}
@@ -100,179 +97,149 @@ export const Certifications: React.FC = () => {
           {filteredCerts.map((cert) => (
             <div
               key={cert.id}
-              className="bg-[#0C0C0C] rounded-3xl border border-white/10 hover:border-[#CCFF00]/40 p-6 sm:p-7 shadow-glass-card transition-all duration-300 card-tilt flex flex-col justify-between group"
+              className="bg-white dark:bg-[#0C0C0C] rounded-3xl border border-neutral-200 dark:border-white/10 p-6 shadow-sm hover:border-[#1C39BB]/40 transition-all flex flex-col justify-between"
             >
               <div className="space-y-4">
-                
-                {/* Header Code & Badge */}
-                <div className="flex items-center justify-between font-mono text-xs pb-3 border-b border-white/10">
-                  <span className="text-[#CCFF00] font-bold">{cert.code}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded bg-white/5 text-white/80 border border-white/10">
+                <div className="flex items-center justify-between text-xs pb-3 border-b border-neutral-100 dark:border-white/10">
+                  <span className="font-sans font-medium text-neutral-500 dark:text-neutral-400">
                     {cert.issuer}
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full bg-blue-50 dark:bg-[#1C39BB]/15 text-[#1C39BB] dark:text-blue-300 text-[10px] font-heading font-semibold">
+                    {cert.category}
                   </span>
                 </div>
 
-                {/* Title */}
-                <h3 className="font-sans text-xl font-bold text-white group-hover:text-[#CCFF00] transition-colors leading-snug">
-                  {cert.title}
-                </h3>
+                <div className="space-y-1">
+                  <h3 className="font-heading text-lg font-bold text-neutral-900 dark:text-white leading-snug">
+                    {cert.title}
+                  </h3>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans">
+                    Issued: {cert.completionDate}
+                  </p>
+                </div>
 
-                {/* Summary */}
-                <p className="text-xs text-[#EBEBEB]/70 leading-relaxed font-sans line-clamp-3">
+                <p className="text-xs text-neutral-600 dark:text-neutral-300 font-sans leading-relaxed line-clamp-3">
                   {cert.summary}
                 </p>
 
-                {/* Skills Tags */}
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/40 block mb-1.5">
-                    VALIDATED SKILLS
-                  </span>
-                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px]">
-                    {cert.skills.map((s) => (
-                      <span
-                        key={s}
-                        className="px-2 py-0.5 rounded bg-white/[0.03] text-white/80 border border-white/5"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {cert.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-100 dark:bg-white/[0.04] text-neutral-700 dark:text-neutral-300 border border-neutral-200/60 dark:border-white/5"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-
               </div>
 
-              {/* Action Buttons */}
-              <div className="pt-5 mt-4 border-t border-white/10 flex items-center justify-between font-mono text-xs">
+              <div className="pt-5 mt-4 border-t border-neutral-100 dark:border-white/10 flex items-center justify-between">
                 <button
                   onClick={() => setActiveModalCert(cert)}
-                  className="font-bold text-[#CCFF00] hover:text-white transition-colors"
+                  className="text-xs font-heading font-semibold text-[#1C39BB] dark:text-blue-400 hover:underline"
                 >
-                  CREDENTIAL SPECS
+                  View Details
                 </button>
 
-                {cert.verificationUrl ? (
+                {cert.verificationUrl && (
                   <a
                     href={cert.verificationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1.5 rounded-lg bg-white/5 hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] transition-colors"
-                    title="Verify on Issuer Platform"
-                    aria-label="Verify credential"
+                    className="inline-flex items-center space-x-1 text-xs font-sans text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
                   >
-                    <ExternalLink className="w-4 h-4" />
+                    <span>Verify</span>
+                    <ExternalLink className="w-3 h-3" />
                   </a>
-                ) : (
-                  <span className="text-[10px] text-white/40">
-                    {cert.completionDate}
-                  </span>
                 )}
               </div>
             </div>
           ))}
         </div>
 
-        {filteredCerts.length === 0 && (
-          <div className="text-center py-12 text-white/50 font-mono text-xs">
-            No matching credentials found for "{searchQuery}".
-          </div>
-        )}
-
       </div>
 
-      {/* Credential Detail Modal */}
+      {/* Certificate Modal */}
       {activeModalCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn">
-          <div className="bg-[#0C0C0C] rounded-3xl max-w-lg w-full border border-white/15 shadow-[0_25px_60px_rgba(0,0,0,0.95)] p-6 sm:p-8 space-y-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+          <div className="bg-white dark:bg-[#0C0C0C] rounded-3xl border border-neutral-200 dark:border-white/15 max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative text-neutral-900 dark:text-white">
             
-            {/* Modal Header */}
-            <div className="flex items-start justify-between border-b border-white/10 pb-4 font-mono">
-              <div className="space-y-1">
-                <span className="text-xs text-[#CCFF00] font-bold">
-                  {activeModalCert.code}
-                </span>
-                <h3 className="font-sans text-2xl font-bold text-white pt-1">
-                  {activeModalCert.title}
-                </h3>
-                <p className="text-xs text-white/60">
-                  ISSUER: <strong className="text-white">{activeModalCert.issuer}</strong>
-                </p>
-              </div>
+            <button
+              onClick={() => setActiveModalCert(null)}
+              className="absolute top-6 right-6 p-2 rounded-full bg-neutral-100 dark:bg-white/10 hover:bg-neutral-200 dark:hover:bg-white/20 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5 text-neutral-700 dark:text-neutral-300" />
+            </button>
 
-              <button
-                onClick={() => setActiveModalCert(null)}
-                aria-label="Close modal"
-                className="p-1.5 rounded-xl text-white/60 hover:text-white hover:bg-white/10 transition-colors border border-white/10"
-              >
-                <X className="w-5 h-5" />
-              </button>
+            <div className="space-y-2 border-b border-neutral-100 dark:border-white/10 pb-4 mb-5">
+              <span className="px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-[#1C39BB]/15 text-[#1C39BB] dark:text-blue-300 text-xs font-heading font-semibold">
+                {activeModalCert.category}
+              </span>
+              <h3 className="font-heading text-2xl font-bold text-neutral-900 dark:text-white">
+                {activeModalCert.title}
+              </h3>
+              <p className="text-xs text-neutral-500 dark:text-neutral-400 font-sans">
+                Issued by {activeModalCert.issuer} &bull; {activeModalCert.completionDate}
+              </p>
             </div>
 
-            {/* Modal Details */}
-            <div className="space-y-4 text-xs font-mono">
-              <div className="p-4 bg-white/[0.02] rounded-2xl border border-white/10 space-y-1.5">
-                <span className="text-[10px] text-white/40 block uppercase">
-                  CREDENTIAL SYNOPSIS
-                </span>
-                <p className="text-white/80 font-sans leading-relaxed text-xs">
+            <div className="space-y-4 text-sm font-sans">
+              <div>
+                <h4 className="font-heading font-semibold text-xs uppercase tracking-wider text-neutral-400 mb-1">
+                  Curriculum & Verification Summary
+                </h4>
+                <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">
                   {activeModalCert.summary}
                 </p>
               </div>
 
               <div>
-                <span className="text-[10px] text-white/40 block uppercase mb-2">
-                  VALIDATED COMPETENCIES
-                </span>
-                <div className="flex flex-wrap gap-1.5">
+                <h4 className="font-heading font-semibold text-xs uppercase tracking-wider text-neutral-400 mb-2">
+                  Skills Validated
+                </h4>
+                <div className="flex flex-wrap gap-2">
                   {activeModalCert.skills.map((s) => (
                     <span
                       key={s}
-                      className="px-2.5 py-1 rounded-lg bg-black border border-white/15 text-white"
+                      className="inline-flex items-center px-2.5 py-1 rounded-lg bg-neutral-100 dark:bg-white/5 text-neutral-800 dark:text-neutral-200 text-xs font-mono border border-neutral-200 dark:border-white/10"
                     >
+                      <CheckCircle className="w-3 h-3 mr-1 text-emerald-600 dark:text-emerald-400" />
                       {s}
                     </span>
                   ))}
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <div className="p-3 bg-white/[0.02] rounded-xl border border-white/5">
-                  <span className="text-white/40 block text-[10px]">VERIFICATION ID</span>
-                  <span className="text-white font-bold">{activeModalCert.credentialId || 'VERIFIED'}</span>
-                </div>
-                <div className="p-3 bg-white/[0.02] rounded-xl border border-white/5">
-                  <span className="text-white/40 block text-[10px]">RECORD STATUS</span>
-                  <span className="text-[#10B981] font-bold flex items-center gap-1">
-                    <CheckCircle className="w-3.5 h-3.5" /> VERIFIED
-                  </span>
-                </div>
-              </div>
             </div>
 
-            {/* Modal Footer */}
-            <div className="flex items-center justify-between pt-4 border-t border-white/10 font-mono text-xs">
-              <button
-                onClick={() => setActiveModalCert(null)}
-                className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
-              >
-                CLOSE
-              </button>
-
-              {activeModalCert.verificationUrl && (
+            <div className="mt-8 pt-5 border-t border-neutral-100 dark:border-white/10 flex items-center justify-between">
+              {activeModalCert.verificationUrl ? (
                 <a
                   href={activeModalCert.verificationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#CCFF00] text-black font-bold hover:bg-[#B5E600] transition-colors"
+                  className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-xl bg-[#1C39BB] text-white font-heading font-semibold text-xs hover:bg-[#152c99] transition-all shadow-sm"
                 >
-                  <span>VERIFY ONLINE</span>
+                  <span>Verify Credential</span>
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
+              ) : (
+                <span className="text-xs text-neutral-400">Institutional record</span>
               )}
+
+              <button
+                onClick={() => setActiveModalCert(null)}
+                className="px-4 py-2 rounded-xl text-neutral-600 dark:text-neutral-400 text-xs font-heading font-medium"
+              >
+                Close
+              </button>
             </div>
 
           </div>
         </div>
       )}
+
     </section>
   );
 };
