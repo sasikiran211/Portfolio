@@ -1,13 +1,12 @@
-export type SkillLevel = 'Proficient' | 'Practising' | 'Familiar' | 'Currently Learning' | 'Planned';
-
 export interface SkillItem {
   name: string;
-  level: SkillLevel;
-  highlight?: boolean;
+  tag: string;
+  status?: 'Primary' | 'Core' | 'Active Study' | 'Planned';
 }
 
 export interface SkillCategory {
   id: string;
+  categoryCode: string;
   title: string;
   description: string;
   badge: string;
@@ -17,95 +16,59 @@ export interface SkillCategory {
 export const skillsData: SkillCategory[] = [
   {
     id: "data-analytics",
-    title: "Data Analytics & Business Intelligence",
-    description: "Core professional focus — translating raw data into clear business metrics, visualizations, and automated dashboards.",
-    badge: "Primary Focus",
+    categoryCode: "MODULE // 01",
+    title: "Data Analytics & Python Ecosystem",
+    description: "Core professional direction — end-to-end data manipulation, analytical querying, feature modeling, and visualization.",
+    badge: "PRIMARY DIRECTION",
     skills: [
-      { name: "SQL", level: "Proficient", highlight: true },
-      { name: "Excel", level: "Proficient", highlight: true },
-      { name: "Power BI", level: "Practising", highlight: true },
-      { name: "DAX", level: "Practising" },
-      { name: "Power Query", level: "Practising" },
-      { name: "Data Cleaning", level: "Proficient" },
-      { name: "Exploratory Data Analysis", level: "Proficient", highlight: true },
-      { name: "Data Visualization", level: "Proficient" }
-    ]
-  },
-  {
-    id: "python-ecosystem",
-    title: "Python Data Science Ecosystem",
-    description: "Libraries and computational tools for statistical analysis, numerical operations, and informative visual storytelling.",
-    badge: "Core Stack",
-    skills: [
-      { name: "Pandas", level: "Proficient", highlight: true },
-      { name: "NumPy", level: "Proficient", highlight: true },
-      { name: "Matplotlib", level: "Practising" },
-      { name: "Seaborn", level: "Practising" }
+      { name: "SQL", tag: "RELATIONAL_QUERY", status: "Primary" },
+      { name: "Excel", tag: "SPREADSHEET_MODELING", status: "Primary" },
+      { name: "Power BI", tag: "BUSINESS_INTELLIGENCE", status: "Primary" },
+      { name: "DAX", tag: "MEASURES_CALCULATIONS", status: "Primary" },
+      { name: "Power Query", tag: "ETL_TRANSFORMATION", status: "Primary" },
+      { name: "Pandas", tag: "DATAFRAME_OPS", status: "Primary" },
+      { name: "NumPy", tag: "VECTORIZED_NUMERICS", status: "Primary" },
+      { name: "Matplotlib", tag: "DATA_VISUALIZATION", status: "Core" },
+      { name: "Seaborn", tag: "STATISTICAL_PLOTS", status: "Core" }
     ]
   },
   {
     id: "programming",
+    categoryCode: "MODULE // 02",
     title: "Programming Languages",
-    description: "Multi-language programming foundation applied across algorithm challenges, systems, and application logic.",
-    badge: "Foundation",
+    description: "Multi-paradigm programming foundation applied across algorithm construction and scalable backends.",
+    badge: "FOUNDATION",
     skills: [
-      { name: "Python", level: "Proficient", highlight: true },
-      { name: "Java", level: "Practising", highlight: true },
-      { name: "C", level: "Practising" }
+      { name: "Python", tag: "PY_INTERPRETER", status: "Primary" },
+      { name: "Java", tag: "JVM_SYSTEMS", status: "Core" },
+      { name: "C", tag: "NATIVE_MEMORY", status: "Core" }
     ]
   },
   {
     id: "computer-science",
-    title: "Computer Science Fundamentals",
-    description: "Theoretical and algorithmic grounding supporting software engineering, systems comprehension, and database architecture.",
-    badge: "Core Theory",
+    categoryCode: "MODULE // 03",
+    title: "Computer Science & Systems",
+    description: "Theoretical grounding covering database relational models, algorithms, and active systems study.",
+    badge: "CS CORE",
     skills: [
-      { name: "DBMS", level: "Proficient", highlight: true },
-      { name: "Data Structures & Algorithms", level: "Practising", highlight: true },
-      { name: "Object-Oriented Programming (OOP)", level: "Proficient" },
-      { name: "Operating Systems", level: "Currently Learning" },
-      { name: "Computer Networks", level: "Planned" }
+      { name: "DBMS", tag: "DATABASE_INTERNALS", status: "Core" },
+      { name: "Object-Oriented Programming", tag: "OOP_PATTERNS", status: "Core" },
+      { name: "Data Structures & Algorithms", tag: "DSA_OPTIMIZATION", status: "Core" },
+      { name: "Operating Systems", tag: "SYS_KERNEL_LEARNING", status: "Active Study" },
+      { name: "Computer Networks", tag: "NET_STACK_PLANNED", status: "Planned" }
     ]
   },
   {
     id: "ai-technology",
+    categoryCode: "MODULE // 04",
     title: "AI & Modern Technology",
-    description: "Understanding artificial intelligence paradigms, foundational predictive models, and modern prompt engineering techniques.",
-    badge: "Secondary Focus",
+    description: "Applied artificial intelligence paradigms, foundational predictive learning, and modern generative toolchains.",
+    badge: "SECONDARY DIRECTION",
     skills: [
-      { name: "AI Fundamentals", level: "Practising" },
-      { name: "Machine Learning Fundamentals", level: "Practising", highlight: true },
-      { name: "Generative AI", level: "Familiar" },
-      { name: "Prompt Engineering", level: "Practising" },
-      { name: "AI-Assisted Development", level: "Proficient" }
+      { name: "AI Fundamentals", tag: "SEARCH_HEURISTICS", status: "Core" },
+      { name: "Machine Learning Fundamentals", tag: "SUPERVISED_MODELS", status: "Core" },
+      { name: "Generative AI", tag: "LLM_LATENT_SPACE", status: "Core" },
+      { name: "Prompt Engineering", tag: "CONTEXT_STEERING", status: "Core" }
     ]
   }
 ];
-
-export const levelColors: Record<SkillLevel, { bg: string; text: string; border: string }> = {
-  Proficient: {
-    bg: "bg-ocean/10",
-    text: "text-ocean font-semibold",
-    border: "border-ocean/30"
-  },
-  Practising: {
-    bg: "bg-beige/40",
-    text: "text-ocean",
-    border: "border-beige"
-  },
-  Familiar: {
-    bg: "bg-cream-dark/60",
-    text: "text-ocean/90",
-    border: "border-beige/50"
-  },
-  "Currently Learning": {
-    bg: "bg-amber-100/70",
-    text: "text-amber-900",
-    border: "border-amber-300"
-  },
-  Planned: {
-    bg: "bg-gray-100",
-    text: "text-gray-600",
-    border: "border-gray-200"
-  }
-};

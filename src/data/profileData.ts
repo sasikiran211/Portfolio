@@ -1,4 +1,5 @@
 export interface EducationItem {
+  year: string;
   institution: string;
   degree: string;
   stream?: string;
@@ -34,10 +35,13 @@ export interface ProfileInfo {
   about: {
     lead: string;
     paragraphs: string[];
-    focusAreas: {
+    bentoCards: {
+      id: string;
       title: string;
+      subtitle: string;
       description: string;
-      icon: string;
+      tag: string;
+      highlight?: boolean;
     }[];
   };
   education: EducationItem[];
@@ -54,7 +58,7 @@ export const profileData: ProfileInfo = {
   heroHeadline: "Building with Data.\nExploring AI.",
   heroSubtitle:
     "B.Tech CSE–AIML undergraduate interested in Data Analytics, Data Science and Artificial Intelligence. Developing practical skills through programming, analytical problem-solving, computer science fundamentals and hands-on projects.",
-  availability: "Open to Data & AI Internships",
+  availability: "SYSTEM READY // OPEN TO DATA & AI INTERNSHIPS",
   socialLinks: {
     linkedin: "https://www.linkedin.com/in/SasikiranKakumani",
     github: "https://github.com/sasikiran211",
@@ -68,75 +72,87 @@ export const profileData: ProfileInfo = {
   about: {
     lead: "An engineering undergraduate with a grounded, analytical approach to technology — prioritizing structured thinking, clean data handling, and continuous programming discipline.",
     paragraphs: [
-      "Currently pursuing B.Tech in Computer Science & Engineering (AI & ML) at Vasireddy Venkatadri Institute of Technology (VVITU), in my second year. My primary technical focus is Data Analytics and Data Science — transforming raw information into actionable business insights through SQL queries, exploratory data analysis, and dashboard visualization.",
+      "Currently pursuing B.Tech in Computer Science & Engineering (AI & ML) at Vasireddy Venkatadri Institute of Technology (VVITU). My primary technical focus is Data Analytics and Data Science — transforming raw information into actionable business insights through SQL queries, exploratory data analysis, and dashboard visualization.",
       "Alongside analytical data pipelines, I explore Artificial Intelligence, Machine Learning fundamentals, and Generative AI to understand how intelligent systems solve complex computational challenges.",
       "My problem-solving foundation is built on daily algorithmic practice across platforms like Take U Forward, LeetCode, CodeChef, and HackerRank. I believe in honest mastery: writing clean, well-tested code, understanding fundamental data structures, and building reliable projects that deliver genuine value."
     ],
-    focusAreas: [
+    bentoCards: [
       {
-        title: "Data Analytics & BI (Primary)",
-        description: "Transforming datasets into decision-ready insights using SQL querying, Power BI dashboards, DAX metrics, and exploratory data analysis.",
-        icon: "BarChart3"
+        id: "primary-focus",
+        title: "Data Analytics & BI Engine",
+        subtitle: "Primary Technical Focus",
+        description: "Transforming ambiguous relational tables into executive-grade insight models using SQL, Power BI, DAX measures, and statistical EDA.",
+        tag: "CORE_PILLAR",
+        highlight: true
       },
       {
-        title: "Data Science & Python",
-        description: "Statistical computing, data wrangling, and modeling with Pandas, NumPy, Matplotlib, and Seaborn for structured data workflows.",
-        icon: "LineChart"
+        id: "secondary-ai",
+        title: "AI & Machine Learning",
+        subtitle: "Secondary Frontier",
+        description: "Predictive model foundations, feature engineering, and generative AI prompt engineering for autonomous workflows.",
+        tag: "AI_ML_LAB"
       },
       {
-        title: "AI & Machine Learning (Secondary)",
-        description: "Foundational supervised learning algorithms, prompt engineering, and modern AI-assisted engineering practices.",
-        icon: "Cpu"
+        id: "dsa-rigor",
+        title: "Algorithmic Rigor",
+        subtitle: "166+ Verified DSA Solutions",
+        description: "Disciplined problem-solving track across Take U Forward, CodeChef, and HackerRank with multi-language execution in C++, C, Java, and Python.",
+        tag: "DSA_ENGINE"
       },
       {
-        title: "CS & Algorithm Fundamentals",
-        description: "Rigorous daily practice in Data Structures, Object-Oriented Programming, and database management systems.",
-        icon: "Code2"
+        id: "cs-foundations",
+        title: "Systems & Architecture",
+        subtitle: "Theoretical Grounding",
+        description: "Deepening knowledge across DBMS architectures, OOP design patterns, and active study of Operating System internals.",
+        tag: "SYS_CORE"
       }
     ]
   },
   education: [
     {
+      year: "2025–2029",
       institution: "Vasireddy Venkatadri Institute of Technology (VVITU)",
       degree: "B.Tech in Computer Science and Engineering",
       stream: "Artificial Intelligence & Machine Learning",
       grade: "7.5 CGPA",
       gradeType: "CGPA",
-      duration: "2023 – 2027 (Ongoing)",
+      duration: "2025 – 2029",
       status: "Second Year, First Semester",
       location: "Guntur, Andhra Pradesh, India",
       highlights: [
-        "Core coursework in Data Structures, OOP (Java), DBMS (SQL), Discrete Mathematics",
-        "Active technical contributor and competitive problem solver",
-        "Exploring applied machine learning and analytical pipelines"
+        "Specialized coursework in Data Structures, OOP (Java), DBMS (SQL), and Applied AI",
+        "Active competitive programmer with 51-day peak streak on Take U Forward",
+        "Prototyping data-intensive systems and machine learning workflows"
       ]
     },
     {
+      year: "2023–2025",
       institution: "Sri Gowthami Junior College",
       degree: "Intermediate Education",
       stream: "MPC (Mathematics, Physics, Chemistry)",
       grade: "97.7%",
       gradeType: "Percentage",
-      duration: "2021 – 2023",
+      duration: "2023 – 2025",
       status: "Completed",
       location: "Andhra Pradesh, India",
       highlights: [
-        "Strong foundation in analytical mathematics, calculus, and logical reasoning",
-        "High academic standing with 97.7% overall score"
+        "Mathematical rigor, calculus, probability, and analytical problem solving",
+        "High academic score: 97.7% overall standing"
       ]
     },
     {
+      year: "2022",
       institution: "Sri Gowthami E-techno School",
       degree: "Secondary School Certificate (SSC)",
       stream: "General Secondary Education",
       grade: "90.33%",
       gradeType: "Percentage",
-      duration: "Completed 2021",
+      duration: "Completed 2022",
       status: "Completed",
       location: "Andhra Pradesh, India",
       highlights: [
-        "Excellence in mathematics and scientific fundamentals",
-        "Consistent academic performance across all subjects"
+        "Foundation in mathematics, sciences, and computational logic",
+        "Consistent academic excellence with 90.33% score"
       ]
     }
   ]

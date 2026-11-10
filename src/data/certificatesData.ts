@@ -1,9 +1,10 @@
 export interface Certificate {
   id: string;
+  code: string;
   title: string;
   issuer: string;
-  category: 'Data & SQL' | 'Python & AI' | 'Programming & Web';
-  completionDate?: string;
+  category: 'Data Analytics' | 'Python' | 'SQL' | 'AI and Generative AI' | 'Software Development' | 'Programming Certifications';
+  completionDate: string;
   skills: string[];
   credentialId?: string;
   verificationUrl?: string;
@@ -14,119 +15,128 @@ export interface Certificate {
 export const certificatesData: Certificate[] = [
   {
     id: "sql-case-study-infosys",
+    code: "CERT // SQL-01",
     title: "SQL Case Study – SQL Workshop",
     issuer: "Infosys Springboard",
-    category: "Data & SQL",
+    category: "SQL",
     completionDate: "Verified Credential",
-    skills: ["SQL", "Relational Database Queries", "Data Aggregation", "Subqueries", "JOIN Operations"],
+    skills: ["SQL", "Relational Queries", "Multi-Table Joins", "Aggregations", "Subqueries"],
     credentialId: "Infosys Springboard",
     verificationUrl: "",
     summary:
-      "Hands-on workshop focused on real-world case studies requiring complex SQL queries, multi-table joins, analytical groupings, and data extraction patterns.",
+      "Enterprise SQL case study program requiring complex query construction, relational algebra, grouping operations, and analytical data extraction.",
     badgeText: "Enterprise Workshop"
   },
   {
     id: "learning-python-linkedin",
+    code: "CERT // PY-01",
     title: "Learning Python",
     issuer: "LinkedIn Learning",
-    category: "Python & AI",
+    category: "Python",
     completionDate: "Verified Credential",
-    skills: ["Python Fundamentals", "Control Flow", "Functions & Modules", "Data Structures", "Error Handling"],
+    skills: ["Python Core", "Control Flow", "Data Structures", "Functions", "OOP Basics"],
     credentialId: "LinkedIn Learning",
     verificationUrl: "https://www.linkedin.com/in/SasikiranKakumani",
     summary:
-      "Comprehensive grounding in core Python syntax, object-oriented concepts, functional paradigms, standard libraries, and clean coding conventions.",
-    badgeText: "Language Certification"
+      "Foundational certification validating Python programming fundamentals, error handling, modular code structures, and standard library mastery.",
+    badgeText: "Verified Curriculum"
   },
   {
     id: "python-libraries-data-science-linkedin",
+    code: "CERT // DS-01",
     title: "Python Libraries for Data Science",
     issuer: "LinkedIn Learning",
-    category: "Python & AI",
+    category: "Data Analytics",
     completionDate: "Verified Credential",
-    skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Exploratory Data Analysis"],
+    skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Exploratory Analysis"],
     credentialId: "LinkedIn Learning",
     verificationUrl: "https://www.linkedin.com/in/SasikiranKakumani",
     summary:
-      "Practical mastery of industry-standard Python libraries for loading, inspecting, transforming, and visualizing large numerical and tabular datasets.",
-    badgeText: "Data Science Specialization"
+      "Technical curriculum in numerical computing, DataFrame vectorization, statistical distributions, and visual analytics using Python's scientific ecosystem.",
+    badgeText: "Specialization"
   },
   {
     id: "foundations-prompt-engineering-aws",
+    code: "CERT // AI-01",
     title: "Foundations of Prompt Engineering",
     issuer: "AWS Training & Certification",
-    category: "Python & AI",
+    category: "AI and Generative AI",
     completionDate: "Verified Credential",
-    skills: ["Prompt Engineering", "Large Language Models", "Context In-Context Learning", "Generative AI Guardrails"],
+    skills: ["Prompt Engineering", "Large Language Models", "In-Context Learning", "AI Guardrails"],
     credentialId: "AWS Training",
     verificationUrl: "",
     summary:
-      "Architectural fundamentals of Generative AI, prompt framing, few-shot prompting techniques, chain-of-thought patterns, and model behavior steering.",
-    badgeText: "Cloud & AI Training"
+      "AWS training validating prompt framing techniques, chain-of-thought orchestration, model latency tuning, and generative AI system integration.",
+    badgeText: "Cloud AI"
   },
   {
     id: "genai-powered-data-analytics-tata-forage",
+    code: "CERT // AI-02",
     title: "GenAI Powered Data Analytics Job Simulation",
     issuer: "Tata / Forage",
-    category: "Data & SQL",
+    category: "AI and Generative AI",
     completionDate: "Verified Credential",
-    skills: ["Data Analytics", "Generative AI in Analytics", "Executive Reporting", "Insight Extraction", "Visual Storytelling"],
+    skills: ["Data Analytics", "Generative AI in Analytics", "Executive Telemetry", "Trend Synthesis"],
     credentialId: "Tata / Forage Simulation",
     verificationUrl: "",
     summary:
-      "Practical job simulation analyzing complex corporate data workflows, synthesizing trends using AI assistance, and preparing executive-facing analytical presentations.",
+      "Industry simulation analyzing enterprise data patterns, evaluating business metrics with AI tools, and presenting executive findings.",
     badgeText: "Job Simulation"
   },
   {
     id: "full-stack-web-development-ai-internshala",
+    code: "CERT // DEV-01",
     title: "Full Stack Web Development with AI",
     issuer: "Internshala Trainings",
-    category: "Programming & Web",
+    category: "Software Development",
     completionDate: "8-Week Comprehensive Training",
-    skills: ["Full Stack Engineering", "Frontend & Backend Systems", "Database Integration", "AI Integration", "API Architecture"],
+    skills: ["Full Stack Engineering", "Frontend & Backend", "Relational Databases", "AI Tooling", "REST APIs"],
     credentialId: "Internshala Trainings",
     verificationUrl: "",
     summary:
-      "Intensive eight-week program covering end-to-end web engineering, frontend UI architectures, backend API services, relational databases, and AI tooling integration.",
-    badgeText: "8-Week Program"
+      "Eight-week comprehensive development program building full-stack web applications, database integrations, responsive interfaces, and AI tool integrations.",
+    badgeText: "8-Week Intensive"
   },
   {
     id: "hackerrank-java-programming",
+    code: "CERT // PROG-01",
     title: "Java (Basic / Programming) Certification",
     issuer: "HackerRank",
-    category: "Programming & Web",
+    category: "Programming Certifications",
     completionDate: "Verified Credential",
-    skills: ["Java", "OOP Design", "Collections Framework", "Exception Handling", "Memory Model"],
+    skills: ["Java", "OOP Architecture", "Collections Framework", "Exception Handling"],
     credentialId: "HackerRank Verified",
     verificationUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
     summary:
-      "Standardized skills assessment validating proficiency in Java programming constructs, object-oriented inheritance, interfaces, and problem-solving.",
+      "Skill assessment validating core Java language competency, algorithmic thinking, inheritance hierarchy, and object-oriented architecture.",
     badgeText: "Verified Assessment"
   },
   {
     id: "sql-foundations-practical-problem-solving",
+    code: "CERT // SQL-02",
     title: "SQL: From Foundations to Practical Problem Solving",
     issuer: "Professional SQL Course",
-    category: "Data & SQL",
+    category: "SQL",
     completionDate: "Verified Credential",
-    skills: ["SQL Schema Design", "Complex Joins", "Aggregations & Grouping", "Window Functions Basics", "Query Optimization"],
-    credentialId: "Verified Credential",
+    skills: ["Schema Design", "Complex Joins", "Window Functions", "Query Performance", "Aggregations"],
+    credentialId: "Course Certificate",
     verificationUrl: "",
     summary:
-      "In-depth course on database querying from core relational algebra to real-world query drafting and structured data analysis.",
+      "Rigorous database querying course covering relational normalization, schema indexing, multi-table aggregations, and query optimization.",
     badgeText: "Query Mastery"
   },
   {
     id: "hackerrank-python-certification",
+    code: "CERT // PROG-02",
     title: "Python (Basic / Programming) Certification",
     issuer: "HackerRank",
-    category: "Python & AI",
+    category: "Programming Certifications",
     completionDate: "Verified Credential",
-    skills: ["Python 3", "Data Structures", "String Processing", "Algorithmic Logic", "Functional Tools"],
+    skills: ["Python 3", "Data Structures", "String Processing", "Algorithms", "Comprehensions"],
     credentialId: "HackerRank Verified",
     verificationUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
     summary:
-      "Standardized skills assessment testing fundamental Python mastery, data structure manipulations, and algorithmic problem-solving accuracy.",
+      "Standardized skill assessment validating Pythonic problem solving, algorithmic manipulations, and functional programming capabilities.",
     badgeText: "Verified Assessment"
   }
 ];

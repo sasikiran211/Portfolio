@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Database, Wrench, Layers, BookOpen, Sparkles, Filter } from 'lucide-react';
-import { skillsData, levelColors, SkillLevel } from '../data/skillsData';
+import { Terminal } from 'lucide-react';
+import { skillsData } from '../data/skillsData';
 
 export const Skills: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const categories = [
-    { id: 'all', label: 'All Skill Domains', icon: Layers },
-    { id: 'data-analytics', label: 'Data Analytics & BI', icon: Database },
-    { id: 'python-ecosystem', label: 'Python Ecosystem', icon: Sparkles },
-    { id: 'programming', label: 'Programming', icon: Wrench },
-    { id: 'computer-science', label: 'CS Fundamentals', icon: BookOpen },
-    { id: 'ai-technology', label: 'AI & Technology', icon: Sparkles },
+  const categoryFilters = [
+    { id: 'all', label: 'ALL MODULES' },
+    { id: 'data-analytics', label: 'DATA & PYTHON' },
+    { id: 'programming', label: 'PROGRAMMING' },
+    { id: 'computer-science', label: 'CS & SYSTEMS' },
+    { id: 'ai-technology', label: 'AI & MODERN TECH' },
   ];
 
   const filteredCategories = selectedCategory === 'all'
@@ -19,119 +18,134 @@ export const Skills: React.FC = () => {
     : skillsData.filter((c) => c.id === selectedCategory);
 
   return (
-    <section id="skills" className="py-20 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 relative overflow-hidden bg-black">
+      
+      {/* Background Tech Lines */}
+      <div className="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none" />
+
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-ocean/70 mb-2">
-              <Wrench className="w-3.5 h-3.5" />
-              <span>Technical Capabilities</span>
+            <div className="inline-flex items-center space-x-2 text-xs font-mono text-[#CCFF00] tracking-widest mb-2 uppercase">
+              <Terminal className="w-3.5 h-3.5" />
+              <span>[SECTION // 02 &bull; CAPABILITIES]</span>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-ocean tracking-tight">
-              Skills & Technical Grounding
+            <h2 className="font-sans text-3xl sm:text-5xl font-extrabold text-[#EBEBEB] tracking-tight">
+              Technical Architecture & Stack
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-ocean/80">
-              Categorized and transparently assessed competencies, with honest indicators from active practice to ongoing academic study.
+            <p className="mt-3 text-base sm:text-lg text-[#EBEBEB]/70 leading-relaxed font-sans">
+              Structured capabilities across data analytics, systems programming, computer science core foundations, and modern artificial intelligence.
             </p>
           </div>
 
-          {/* Honest Level Legend */}
-          <div className="mt-6 md:mt-0 p-3.5 rounded-xl bg-white border border-beige shadow-subtle">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-ocean/60 block mb-2">
-              Proficiency Legend
+          {/* Technical Tag Status Legend */}
+          <div className="p-4 rounded-2xl bg-[#0C0C0C] border border-white/10 font-mono text-xs">
+            <span className="text-[10px] text-white/40 block mb-2 uppercase tracking-wider">
+              [STATUS // LEGEND]
             </span>
-            <div className="flex flex-wrap gap-2 text-xs">
-              {(['Proficient', 'Practising', 'Familiar', 'Currently Learning', 'Planned'] as SkillLevel[]).map((level) => {
-                const style = levelColors[level];
-                return (
-                  <span
-                    key={level}
-                    className={`px-2 py-0.5 rounded border text-[11px] ${style.bg} ${style.text} ${style.border}`}
-                  >
-                    {level}
-                  </span>
-                );
-              })}
+            <div className="flex flex-wrap gap-2 text-[11px]">
+              <span className="px-2 py-0.5 rounded bg-[#CCFF00]/10 text-[#CCFF00] border border-[#CCFF00]/30 font-bold">
+                PRIMARY
+              </span>
+              <span className="px-2 py-0.5 rounded bg-white/5 text-white/80 border border-white/10">
+                CORE
+              </span>
+              <span className="px-2 py-0.5 rounded bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/30">
+                ACTIVE STUDY
+              </span>
+              <span className="px-2 py-0.5 rounded bg-white/[0.02] text-white/40 border border-white/5">
+                PLANNED
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          <Filter className="w-4 h-4 text-ocean/50 flex-shrink-0 mr-1" />
-          {categories.map((cat) => {
-            const Icon = cat.icon;
+        {/* Filter Navigation Bar */}
+        <div className="flex items-center space-x-2 overflow-x-auto pb-4 mb-8 scrollbar-none font-mono text-xs">
+          {categoryFilters.map((cat) => {
             const isSelected = selectedCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all ${
+                className={`px-4 py-2 rounded-xl transition-all whitespace-nowrap border ${
                   isSelected
-                    ? 'bg-ocean text-cream shadow-sm'
-                    : 'bg-white text-ocean hover:bg-beige/40 border border-beige'
+                    ? 'bg-[#CCFF00] text-black font-bold border-[#CCFF00] shadow-[0_0_20px_rgba(204,255,0,0.35)]'
+                    : 'bg-[#0C0C0C] text-white/70 hover:text-white hover:bg-white/5 border-white/10'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
-                <span>{cat.label}</span>
+                {cat.label}
               </button>
             );
           })}
         </div>
 
-        {/* Category Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Skills Bento Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {filteredCategories.map((category) => {
             const isPrimary = category.id === 'data-analytics';
 
             return (
               <div
                 key={category.id}
-                className={`rounded-2xl p-6 border transition-all ${
+                className={`rounded-3xl p-6 sm:p-8 border transition-all card-tilt ${
                   isPrimary
-                    ? 'bg-white border-ocean/40 shadow-card md:col-span-2 lg:col-span-1'
-                    : 'bg-white/80 border-beige hover:border-ocean/30 shadow-subtle'
+                    ? 'bg-[#0C0C0C] border-[#CCFF00]/30 shadow-[0_0_35px_rgba(204,255,0,0.06)]'
+                    : 'bg-[#0C0C0C] border-white/10 hover:border-white/20 shadow-glass-card'
                 }`}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-beige/30 text-ocean border border-beige/60">
+                {/* Header Tag */}
+                <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 font-mono text-xs">
+                  <span className="text-[#CCFF00] font-bold">{category.categoryCode}</span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-white/5 text-white/60 border border-white/10 text-[10px]">
                     {category.badge}
                   </span>
-                  {isPrimary && (
-                    <span className="text-[11px] font-bold text-ocean/80 uppercase tracking-wider bg-cream px-2 py-0.5 rounded">
-                      Core Direction
-                    </span>
-                  )}
                 </div>
 
-                <h3 className="font-serif text-xl font-bold text-ocean mb-2">
+                <h3 className="font-sans text-2xl font-bold text-white mb-2">
                   {category.title}
                 </h3>
-                <p className="text-xs text-ocean/70 mb-5 leading-relaxed">
+                <p className="text-sm text-[#EBEBEB]/70 leading-relaxed font-sans mb-6">
                   {category.description}
                 </p>
 
-                {/* Skills Chips */}
-                <div className="flex flex-wrap gap-2">
+                {/* Animated Skill Tags Grid */}
+                <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill) => {
-                    const style = levelColors[skill.level];
+                    const isStatusPrimary = skill.status === 'Primary';
+                    const isActiveStudy = skill.status === 'Active Study';
+                    const isPlanned = skill.status === 'Planned';
 
                     return (
                       <div
                         key={skill.name}
-                        className={`inline-flex items-center justify-between space-x-2 px-3 py-1.5 rounded-lg border text-xs transition-colors ${
-                          skill.highlight
-                            ? 'bg-cream-light font-medium border-ocean/30 shadow-2xs'
-                            : 'bg-white border-beige/80'
+                        className={`group px-3.5 py-2 rounded-xl border transition-all flex items-center space-x-2 font-mono text-xs ${
+                          isStatusPrimary
+                            ? 'bg-[#CCFF00]/5 border-[#CCFF00]/30 hover:border-[#CCFF00] hover:bg-[#CCFF00]/10 hover:shadow-[0_0_15px_rgba(204,255,0,0.2)]'
+                            : isActiveStudy
+                            ? 'bg-[#10B981]/5 border-[#10B981]/30 hover:border-[#10B981] hover:bg-[#10B981]/10'
+                            : isPlanned
+                            ? 'bg-white/[0.02] border-white/5 opacity-60'
+                            : 'bg-white/[0.03] border-white/10 hover:border-white/30 hover:bg-white/[0.06]'
                         }`}
                       >
-                        <span className="text-ocean font-medium">{skill.name}</span>
+                        <span className="text-[#EBEBEB] font-semibold group-hover:text-white transition-colors">
+                          {skill.name}
+                        </span>
                         <span
-                          className={`text-[10px] px-1.5 py-0.2 rounded border font-normal ${style.bg} ${style.text} ${style.border}`}
+                          className={`text-[9px] px-1.5 py-0.5 rounded ${
+                            isStatusPrimary
+                              ? 'bg-[#CCFF00]/20 text-[#CCFF00]'
+                              : isActiveStudy
+                              ? 'bg-[#10B981]/20 text-[#10B981]'
+                              : isPlanned
+                              ? 'bg-white/10 text-white/50'
+                              : 'bg-white/10 text-white/60'
+                          }`}
                         >
-                          {skill.level}
+                          {skill.tag}
                         </span>
                       </div>
                     );

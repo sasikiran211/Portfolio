@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Code } from 'lucide-react';
+import { ArrowUp, Terminal } from 'lucide-react';
 import { profileData } from '../data/profileData';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
@@ -9,37 +9,41 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-ocean text-cream py-16 border-t border-ocean-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-black text-[#EBEBEB] py-16 border-t border-white/10 relative overflow-hidden">
+      
+      {/* Background Dots */}
+      <div className="absolute inset-0 bg-tech-dots opacity-15 pointer-events-none" />
+
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-ocean-muted/40">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           
-          {/* Identity & Mission */}
+          {/* Identity & Technical Description */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-cream text-ocean flex items-center justify-center font-serif font-bold text-lg">
+              <div className="w-10 h-10 rounded-2xl bg-[#0C0C0C] border border-[#CCFF00] flex items-center justify-center font-mono font-bold text-sm text-[#CCFF00] shadow-[0_0_15px_rgba(204,255,0,0.3)]">
                 SK
               </div>
               <div>
-                <span className="font-serif text-xl font-bold tracking-tight text-cream block">
+                <span className="font-sans text-xl font-extrabold tracking-tight text-white block">
                   {profileData.name}
                 </span>
-                <span className="text-xs text-cream/70 font-sans block">
-                  Data Analyst & AI/ML Undergraduate
+                <span className="text-xs text-white/50 font-mono block">
+                  DATA ANALYTICS &bull; AI/ML ENGINEERING
                 </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-cream/80 max-w-sm leading-relaxed">
-              B.Tech CSE (AI & ML) student at Vasireddy Venkatadri Institute of Technology. Grounded in analytical inquiry, SQL pipelines, and continuous algorithmic practice.
+            <p className="text-xs sm:text-sm text-[#EBEBEB]/70 max-w-sm leading-relaxed font-sans">
+              B.Tech CSE (AI & ML) at Vasireddy Venkatadri Institute of Technology. Grounded in quantitative thinking, SQL data architectures, and disciplined algorithmic practice.
             </p>
 
-            <div className="flex items-center space-x-3 pt-2">
+            <div className="flex items-center space-x-2.5 pt-2 font-mono">
               <a
                 href={profileData.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-lg bg-ocean-light hover:bg-cream hover:text-ocean text-cream transition-colors"
+                className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] border border-white/10 transition-colors"
                 title="LinkedIn"
                 aria-label="LinkedIn"
               >
@@ -50,7 +54,7 @@ export const Footer: React.FC = () => {
                 href={profileData.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-lg bg-ocean-light hover:bg-cream hover:text-ocean text-cream transition-colors"
+                className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] border border-white/10 transition-colors"
                 title="GitHub"
                 aria-label="GitHub"
               >
@@ -61,71 +65,71 @@ export const Footer: React.FC = () => {
                 href={profileData.socialLinks.takeuforward}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-lg bg-ocean-light hover:bg-cream hover:text-ocean text-cream transition-colors"
+                className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] border border-white/10 transition-colors"
                 title="Take U Forward Profile"
                 aria-label="Take U Forward"
               >
-                <Code className="w-4 h-4" />
+                <Terminal className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Quick Navigation Links */}
-          <div className="md:col-span-4 grid grid-cols-2 gap-4 text-xs">
+          <div className="md:col-span-4 grid grid-cols-2 gap-4 text-xs font-mono">
             <div className="space-y-2.5">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-beige block">
-                Portfolio Sections
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#CCFF00] block">
+                [SECTIONS]
               </span>
-              <ul className="space-y-2">
-                <li><a href="#about" className="text-cream/80 hover:text-cream transition-colors">About Me</a></li>
-                <li><a href="#skills" className="text-cream/80 hover:text-cream transition-colors">Technical Skills</a></li>
-                <li><a href="#projects" className="text-cream/80 hover:text-cream transition-colors">Projects</a></li>
-                <li><a href="#coding" className="text-cream/80 hover:text-cream transition-colors">Coding Profiles</a></li>
+              <ul className="space-y-2 text-white/60">
+                <li><a href="#about" className="hover:text-white transition-colors">01 // ABOUT</a></li>
+                <li><a href="#skills" className="hover:text-white transition-colors">02 // SKILLS</a></li>
+                <li><a href="#projects" className="hover:text-white transition-colors">03 // PROJECTS</a></li>
+                <li><a href="#achievements" className="hover:text-white transition-colors">04 // ACHIEVEMENTS</a></li>
               </ul>
             </div>
 
             <div className="space-y-2.5">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-beige block">
-                Verification & Docs
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#10B981] block">
+                [TELEMETRY]
               </span>
-              <ul className="space-y-2">
-                <li><a href="#certifications" className="text-cream/80 hover:text-cream transition-colors">Certifications (9)</a></li>
-                <li><a href="#education" className="text-cream/80 hover:text-cream transition-colors">VVITU Degree & Marks</a></li>
-                <li><a href="#resume" className="text-cream/80 hover:text-cream transition-colors">Resume PDF</a></li>
-                <li><a href="#contact" className="text-cream/80 hover:text-cream transition-colors">Contact / Inquire</a></li>
+              <ul className="space-y-2 text-white/60">
+                <li><a href="#certificates" className="hover:text-white transition-colors">05 // CERTIFICATES</a></li>
+                <li><a href="#education" className="hover:text-white transition-colors">06 // TIMELINE</a></li>
+                <li><a href="/Sasikiran_Kakumani_Resume.pdf" className="hover:text-white transition-colors">RESUME PDF</a></li>
+                <li><a href="#contact" className="hover:text-white transition-colors">07 // CONTACT</a></li>
               </ul>
             </div>
           </div>
 
-          {/* Design Identity & Palette Info */}
-          <div className="md:col-span-3 space-y-3 text-xs text-cream/70">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-beige block">
-              Design System
+          {/* Design Architecture Info */}
+          <div className="md:col-span-3 space-y-3 font-mono text-xs text-white/50">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-white/70 block">
+              DESIGN SYSTEM V2
             </span>
-            <p className="leading-relaxed">
-              Curated editorial palette: Cream (<span className="font-mono text-beige">#EEE8DF</span>), Beige (<span className="font-mono text-beige">#C4BCB0</span>), and Deep Ocean (<span className="font-mono text-beige">#2C365A</span>).
+            <p className="leading-relaxed text-[11px]">
+              Obsidian (<span className="text-white font-bold">#0C0C0C</span>), Neon Lime (<span className="text-[#CCFF00] font-bold">#CCFF00</span>), and Emerald (<span className="text-[#10B981] font-bold">#10B981</span>).
             </p>
             <div className="flex items-center space-x-2 pt-1">
-              <div className="w-5 h-5 rounded-md bg-[#EEE8DF] border border-white/20" title="Cream #EEE8DF" />
-              <div className="w-5 h-5 rounded-md bg-[#C4BCB0]" title="Beige #C4BCB0" />
-              <div className="w-5 h-5 rounded-md bg-[#2C365A] border border-white/40" title="Deep Ocean #2C365A" />
+              <div className="w-5 h-5 rounded-md bg-[#0C0C0C] border border-white/20" title="Obsidian #0C0C0C" />
+              <div className="w-5 h-5 rounded-md bg-[#CCFF00]" title="Neon Lime #CCFF00" />
+              <div className="w-5 h-5 rounded-md bg-[#10B981]" title="Emerald #10B981" />
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar with Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/70 gap-4">
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-white/50 gap-4">
           <p>
-            &copy; {new Date().getFullYear()} Sasikiran Kakumani &bull; All verified academic and technical records reserved.
+            &copy; {new Date().getFullYear()} Sasikiran Kakumani &bull; All verified academic and technical dossiers reserved.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-ocean-light hover:bg-cream hover:text-ocean text-cream transition-colors"
+            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-white hover:text-[#CCFF00] transition-colors border border-white/10"
           >
-            <span>Back to top</span>
-            <ArrowUp className="w-3.5 h-3.5" />
+            <span>BACK TO APEX</span>
+            <ArrowUp className="w-3.5 h-3.5 text-[#CCFF00]" />
           </button>
         </div>
 

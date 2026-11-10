@@ -4,35 +4,113 @@
 
 @layer base {
   body {
-    background-color: #EEE8DF;
-    color: #2C365A;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #000000;
+    color: #EBEBEB;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
   }
 
-  h1, h2, h3, .font-editorial {
-    font-family: 'Playfair Display', Georgia, serif;
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
-/* Custom scrollbar matching Cream, Beige & Deep Ocean */
+/* 60px Technical Grid Background */
+.bg-tech-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-tech-dots {
+  background-image: radial-gradient(rgba(204, 255, 0, 0.12) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Custom Scrollbar - Obsidian & Neon Lime */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #EEE8DF;
+  background: #0C0C0C;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C4BCB0;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2C365A;
+  background: #CCFF00;
+  box-shadow: 0 0 10px #CCFF00;
 }
 
-/* Subtle transitions */
-.transition-luxury {
+/* Card 3D perspective container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-tilt:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(204, 255, 0, 0.15);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(12, 12, 12, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(204, 255, 0, 0.35);
+}
+
+/* Glowing text helper */
+.glow-text-lime {
+  text-shadow: 0 0 20px rgba(204, 255, 0, 0.4);
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+/* Pulsing beacon */
+@keyframes beaconPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.4;
+  }
+}
+
+.animate-beacon {
+  animation: beaconPulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

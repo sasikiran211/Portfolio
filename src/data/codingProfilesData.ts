@@ -19,16 +19,17 @@ export interface TakeUForwardStats {
 
 export interface CodingProfile {
   platform: string;
-  username: string;
+  handle: string;
   role: string;
   profileUrl: string;
   highlights: string[];
   badges: string[];
   accentColor: string;
+  systemCode: string;
 }
 
 export const takeUForwardData: TakeUForwardStats = {
-  snapshotNote: "Verified Profile Milestone Snapshot (Preserved from profile records)",
+  snapshotNote: "VERIFIED PROFILE SNAPSHOT // ARCHIVED TELEMETRY",
   currentStreak: 40,
   highestStreak: 51,
   problemsSolved: 166,
@@ -37,9 +38,9 @@ export const takeUForwardData: TakeUForwardStats = {
   globalRank: 577,
   coinsEarned: "~1.02K",
   dsaProgress: [
-    { category: "Basic DSA", solved: 57, total: 292, percentage: Math.round((57 / 292) * 100) },
-    { category: "Core DSA", solved: 94, total: 850, percentage: Math.round((94 / 850) * 100) },
-    { category: "Overall DSA Track", solved: 166, total: 1468, percentage: Math.round((166 / 1468) * 100) },
+    { category: "Basic DSA Track", solved: 57, total: 292, percentage: Math.round((57 / 292) * 100) },
+    { category: "Core DSA Track", solved: 94, total: 850, percentage: Math.round((94 / 850) * 100) },
+    { category: "Comprehensive Roadmap", solved: 166, total: 1468, percentage: Math.round((166 / 1468) * 100) },
   ],
   languages: ["C++", "C", "Java", "JavaScript", "Python"],
   profileUrl: "https://takeuforward.org/profile"
@@ -48,80 +49,86 @@ export const takeUForwardData: TakeUForwardStats = {
 export const codingProfilesData: CodingProfile[] = [
   {
     platform: "Take U Forward",
-    username: "Sasikiran Kakumani",
-    role: "DSA & Problem-Solving Track",
+    handle: "Sasikiran Kakumani",
+    role: "Core DSA & Problem Solving",
     profileUrl: "https://takeuforward.org/profile",
     highlights: [
-      "166 problems solved across Basic & Core tracks",
-      "51 days highest streak (40 days current streak)",
-      "Global Rank #577 with 1,905 contributions"
+      "166 problems solved across Basic & Core roadmaps",
+      "51 days peak streak with 40 days active current streak",
+      "Global Rank #577 with 1,905 verified contributions"
     ],
-    badges: ["Top 600 Global Rank", "51-Day Streak", "Multi-Language"],
-    accentColor: "#2C365A"
+    badges: ["RANK #577", "51-DAY PEAK", "MULTI-LANG"],
+    accentColor: "#CCFF00",
+    systemCode: "TUF // TELEMETRY"
   },
   {
     platform: "CodeChef",
-    username: "sasikiran_24",
-    role: "Competitive Programming",
+    handle: "sasikiran_24",
+    role: "Competitive Algorithmic Contests",
     profileUrl: "https://www.codechef.com/users/sasikiran_24",
     highlights: [
-      "Active participant in algorithmic contests and practice problems",
+      "Verified member participating in timed algorithm challenges",
       "Focusing on mathematics, array logic, and computational complexity",
-      "Direct link to public performance record"
+      "Public performance record and rating progression"
     ],
-    badges: ["Active Member", "Contest Participant"],
-    accentColor: "#5B4638"
+    badges: ["VERIFIED MEMBER", "CONTEST PARTICIPANT"],
+    accentColor: "#CCFF00",
+    systemCode: "CHEF // CONTESTS"
   },
   {
     platform: "HackerRank",
-    username: "Sasikiran_24",
-    role: "Skills Assessments & Challenges",
+    handle: "Sasikiran_24",
+    role: "Standardized Skill Assessments",
     profileUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
     highlights: [
-      "Verified Java (Basic) Skills Certification",
-      "Verified Python (Basic) Skills Certification",
-      "Consistent problem solving in core data structures"
+      "Verified Java (Basic) Programming Certification",
+      "Verified Python (Basic) Programming Certification",
+      "Consistent problem-solving challenges in core data structures"
     ],
-    badges: ["Java Certified", "Python Certified"],
-    accentColor: "#00EA64"
+    badges: ["JAVA CERTIFIED", "PYTHON CERTIFIED"],
+    accentColor: "#10B981",
+    systemCode: "HRANK // ASSESS"
   },
   {
     platform: "LeetCode",
-    username: "Sasikiran_24",
-    role: "Algorithm Practice",
+    handle: "Sasikiran_24",
+    role: "Algorithm & Pattern Mastery",
     profileUrl: "https://leetcode.com/u/Sasikiran_24/",
     highlights: [
-      "Targeted practice in Arrays, Two Pointers, Strings, and Sorting",
-      "Translating Take U Forward structured roadmap to LeetCode submissions",
-      "Continuous algorithmic improvement"
+      "Two-pointer techniques, sliding windows, and array partitions",
+      "Systematic conversion of DSA fundamentals into clean implementations",
+      "Active algorithmic practice"
     ],
-    badges: ["Problem Solver", "Algorithm Track"],
-    accentColor: "#FFA116"
+    badges: ["LEETCODE ALGO", "PATTERN PRACTICE"],
+    accentColor: "#FFA116",
+    systemCode: "LEET // ALGO"
   },
   {
     platform: "GeeksforGeeks",
-    username: "SasikianKakumani",
-    role: "DSA Practice & CS Core",
+    handle: "SasikianKakumani",
+    role: "CS Core & Theory Practice",
     profileUrl: "https://www.geeksforgeeks.org/user/SasikianKakumani/",
     highlights: [
-      "CS fundamental challenges in DBMS, OOP, and data structures",
-      "Practice questions supporting university and technical readiness",
-      "Public profile verification link"
+      "Targeted problem sets reinforcing university CS core subjects",
+      "DBMS queries, OOP inheritance, and data structure implementations",
+      "Public profile track"
     ],
-    badges: ["Practice Track", "CS Concepts"],
-    accentColor: "#2F8D46"
+    badges: ["CS CONCEPTS", "PRACTICE TRACK"],
+    accentColor: "#10B981",
+    systemCode: "GFG // SYSTEMS"
   },
   {
     platform: "GitHub",
-    username: "sasikiran211",
-    role: "Code Repositories & Projects",
+    handle: "sasikiran211",
+    role: "Code Repositories & Open Source",
     profileUrl: "https://github.com/sasikiran211",
     highlights: [
-      "Public repositories for course work, code samples, and implementations",
-      "Projects: SweetFlow and Written a Queue data structures",
-      "Version control discipline and collaborative workflows"
+      "Project repositories for Civic Flow, RetainIQ, and Nexora AI Dashboard",
+      "Data structure algorithm implementations and university codebases",
+      "Version control discipline and modular architecture"
     ],
-    badges: ["Open Source", "Version Control"],
-    accentColor: "#24292E"
+    badges: ["OPEN SOURCE", "REPOSITORIES"],
+    accentColor: "#EBEBEB",
+    systemCode: "GIT // ENGINE"
   }
 ];

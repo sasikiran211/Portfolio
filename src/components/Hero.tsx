@@ -1,6 +1,7 @@
 import React from 'react';
-import { ArrowDown, ArrowUpRight, FileText, CheckCircle2, Database, Brain, Sparkles } from 'lucide-react';
+import { ArrowDown, FileText, Terminal, Database, Cpu } from 'lucide-react';
 import { profileData } from '../data/profileData';
+import { ThreeCanvas } from './ThreeCanvas';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
 export const Hero: React.FC = () => {
@@ -10,59 +11,61 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Editorial Decorative Grid Elements */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-beige rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-10 left-10 w-80 h-80 bg-ocean/10 rounded-full blur-2xl -z-10" />
-      </div>
+    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      
+      {/* Background Radial Glow Spheres */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#CCFF00]/5 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-[#10B981]/5 rounded-full blur-[130px] pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Main Hero Content */}
+          {/* Left Column: Editorial & Technical Typography */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Availability Pill */}
-            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-white/70 border border-beige shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
-              <span className="text-xs sm:text-sm font-medium text-ocean">
-                {profileData.availability}
+            {/* Technical System Status Tag */}
+            <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/10 shadow-inner">
+              <span className="w-2 h-2 rounded-full bg-[#CCFF00] animate-beacon" />
+              <span className="text-xs font-mono text-[#EBEBEB]/80 tracking-wider">
+                SYS.INIT // B.TECH CSE (AI & ML) &bull; YEAR 2
               </span>
             </div>
 
-            {/* Name & Academic Identity */}
-            <div>
-              <p className="text-sm sm:text-base font-semibold uppercase tracking-widest text-ocean/70 mb-2">
-                Portfolio & Technical Showcase
-              </p>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-ocean leading-[1.15]">
-                {profileData.name}
+            {/* Name Heading (Oversized Space Grotesk) */}
+            <div className="space-y-1">
+              <span className="text-xs font-mono tracking-widest text-[#CCFF00] block uppercase">
+                [TECHNICAL DOSSIER &bull; DATA ANALYST & AI/ML]
+              </span>
+              <h1 className="font-sans text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#EBEBEB] leading-[1.05]">
+                SASIKIRAN<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#EBEBEB] to-white/60">
+                  KAKUMANI
+                </span>
               </h1>
             </div>
 
-            {/* Core Tagline / Editorial Headline */}
-            <div className="border-l-2 border-ocean/40 pl-4 py-1">
-              <h2 className="font-serif text-2xl sm:text-3xl font-semibold italic text-ocean/90">
-                "{profileData.tagline}"
+            {/* Core Message with Neon Lime Highlight */}
+            <div className="border-l-2 border-[#CCFF00] pl-4 py-1">
+              <h2 className="font-sans text-2xl sm:text-3xl font-bold tracking-tight text-white leading-snug">
+                Building with <span className="text-[#CCFF00] glow-text-lime">Data.</span> Exploring <span className="text-[#10B981] glow-text-emerald">AI.</span>
               </h2>
             </div>
 
-            {/* Supporting Introduction */}
-            <p className="text-base sm:text-lg text-ocean/80 leading-relaxed font-sans max-w-2xl">
-              {profileData.heroSubtitle}
+            {/* Professional Introduction */}
+            <p className="text-base sm:text-lg text-[#EBEBEB]/70 max-w-2xl font-sans leading-relaxed">
+              B.Tech CSE–AIML undergraduate at Vasireddy Venkatadri Institute of Technology (VVITU). Specializing in <strong className="text-white">Data Analytics</strong> and <strong className="text-white">Data Science</strong> as primary directions, with active exploration in machine learning algorithms, automated data pipelines, and competitive algorithmic problem solving.
             </p>
 
-            {/* Target Alignment Pills */}
-            <div className="flex flex-wrap gap-2 pt-1">
-              <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-ocean text-cream">
-                <Database className="w-3 h-3 mr-1.5" /> Data Analytics (Primary)
+            {/* Technical Alignment Pills */}
+            <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-[#CCFF00]/10 border border-[#CCFF00]/30 text-[#CCFF00]">
+                <Database className="w-3.5 h-3.5 mr-1.5" /> PRIMARY: DATA ANALYTICS & SQL
               </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-white border border-beige text-ocean">
-                <Brain className="w-3 h-3 mr-1.5 text-ocean" /> Data Science & AI/ML
+              <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-white/80">
+                <Cpu className="w-3.5 h-3.5 mr-1.5 text-[#10B981]" /> AI / ML & GENERATIVE AI
               </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-beige/40 text-ocean">
-                <Sparkles className="w-3 h-3 mr-1.5 text-ocean" /> 166+ DSA Solved
+              <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-white/[0.04] border border-white/10 text-white/80">
+                <Terminal className="w-3.5 h-3.5 mr-1.5 text-[#CCFF00]" /> 166+ DSA PROBLEMS SOLVED
               </span>
             </div>
 
@@ -70,139 +73,96 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <button
                 onClick={() => scrollTo('projects')}
-                className="inline-flex items-center space-x-2 bg-ocean hover:bg-ocean-light text-cream font-medium px-6 py-3 rounded-xl transition-luxury shadow-md hover:shadow-lg active:scale-95"
+                className="inline-flex items-center space-x-2 bg-[#CCFF00] hover:bg-[#B5E600] text-black font-mono font-bold px-6 py-3.5 rounded-xl transition-all shadow-[0_0_25px_rgba(204,255,0,0.3)] hover:shadow-[0_0_35px_rgba(204,255,0,0.5)] active:scale-95 text-xs sm:text-sm"
               >
-                <span>View Projects</span>
-                <ArrowDown className="w-4 h-4" />
+                <span>EXPLORE PROJECTS</span>
+                <ArrowDown className="w-4 h-4 text-black" />
               </button>
 
               <button
-                onClick={() => scrollTo('resume')}
-                className="inline-flex items-center space-x-2 bg-white hover:bg-cream-light text-ocean font-medium px-5 py-3 rounded-xl border border-beige hover:border-ocean/40 transition-luxury shadow-sm active:scale-95"
+                onClick={() => scrollTo('education')}
+                className="inline-flex items-center space-x-2 bg-white/[0.04] hover:bg-white/[0.08] text-[#EBEBEB] font-mono font-medium px-5 py-3.5 rounded-xl border border-white/15 hover:border-[#CCFF00]/40 transition-all shadow-sm active:scale-95 text-xs sm:text-sm"
               >
-                <FileText className="w-4 h-4 text-ocean" />
-                <span>Resume / Credentials</span>
+                <FileText className="w-4 h-4 text-[#CCFF00]" />
+                <span>RESUME & DOSSIER</span>
               </button>
 
+              {/* Social Channels Pill Icons */}
               <a
                 href={profileData.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center p-3 rounded-xl bg-white hover:bg-beige/30 text-ocean border border-beige transition-colors"
+                className="p-3.5 rounded-xl bg-white/[0.03] hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] border border-white/10 hover:border-[#CCFF00]/40 transition-all"
                 title="LinkedIn Profile"
-                aria-label="Visit LinkedIn Profile"
+                aria-label="LinkedIn"
               >
-                <LinkedinIcon className="w-5 h-5 text-ocean" />
+                <LinkedinIcon className="w-4 h-4" />
               </a>
 
               <a
                 href={profileData.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center p-3 rounded-xl bg-white hover:bg-beige/30 text-ocean border border-beige transition-colors"
+                className="p-3.5 rounded-xl bg-white/[0.03] hover:bg-[#CCFF00]/10 text-white hover:text-[#CCFF00] border border-white/10 hover:border-[#CCFF00]/40 transition-all"
                 title="GitHub Profile"
-                aria-label="Visit GitHub Profile"
+                aria-label="GitHub"
               >
-                <GithubIcon className="w-5 h-5 text-ocean" />
+                <GithubIcon className="w-4 h-4" />
               </a>
             </div>
+
           </div>
 
-          {/* Editorial Visual Profile Card */}
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: Interactive 3D Canvas + Floating HUD Cards */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative rounded-3xl bg-[#0C0C0C]/80 border border-white/10 p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] overflow-hidden group">
               
-              {/* Outer decorative layered frame */}
-              <div className="absolute -inset-3 bg-beige/40 rounded-2xl transform rotate-1 -z-10" />
-              
-              <div className="bg-white rounded-2xl border border-beige/80 p-6 sm:p-8 shadow-card space-y-6">
+              {/* Inner HUD Terminal Header */}
+              <div className="flex items-center justify-between pb-3 mb-2 border-b border-white/10 font-mono text-[11px] text-white/50">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#CCFF00]/80" />
+                  <span className="text-[#EBEBEB]/80 font-bold">3D_DATA_CORE // V2.0</span>
+                </div>
+                <span className="text-[#10B981]">ONLINE &bull; PARALLAX_ACTIVE</span>
+              </div>
+
+              {/* 3D WebGL Canvas */}
+              <ThreeCanvas />
+
+              {/* Floating Technical HUD Cards */}
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/10 font-mono text-xs">
                 
-                {/* Monogram Portrait Display */}
-                <div className="flex items-center space-x-4">
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-ocean text-cream flex items-center justify-center font-serif text-3xl sm:text-4xl font-bold shadow-elevated border-4 border-cream">
-                    SK
-                  </div>
-                  <div className="space-y-1">
-                    <div className="inline-flex items-center space-x-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-beige/40 text-ocean">
-                      <CheckCircle2 className="w-3 h-3 text-ocean" />
-                      <span>Verified Academic Stage</span>
-                    </div>
-                    <h3 className="font-serif text-xl font-bold text-ocean">
-                      Sasikiran Kakumani
-                    </h3>
-                    <p className="text-xs sm:text-sm text-ocean/80 font-medium">
-                      B.Tech CSE (AI & ML) &bull; Year 2
-                    </p>
-                    <p className="text-xs text-ocean/60">
-                      Vasireddy Venkatadri Institute of Tech (VVITU)
-                    </p>
-                  </div>
+                <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
+                  <span className="text-[10px] text-white/40 block">ACADEMIC STANDING</span>
+                  <span className="text-lg font-bold text-white">7.5 CGPA</span>
+                  <span className="text-[10px] text-[#10B981] block">VVITU University Record</span>
                 </div>
 
-                {/* Academic & Technical Quick Stats */}
-                <div className="grid grid-cols-2 gap-3 pt-2 border-t border-beige/60">
-                  <div className="bg-cream/60 p-3 rounded-xl border border-beige/40">
-                    <span className="text-xs text-ocean/70 block">Academic Standing</span>
-                    <span className="font-serif text-xl font-bold text-ocean">7.5 CGPA</span>
-                    <span className="text-[11px] text-ocean/60 block">B.Tech Sem 1 Record</span>
-                  </div>
-
-                  <div className="bg-cream/60 p-3 rounded-xl border border-beige/40">
-                    <span className="text-xs text-ocean/70 block">DSA Problems Solved</span>
-                    <span className="font-serif text-xl font-bold text-ocean">166+</span>
-                    <span className="text-[11px] text-ocean/60 block">Take U Forward Track</span>
-                  </div>
-
-                  <div className="bg-cream/60 p-3 rounded-xl border border-beige/40">
-                    <span className="text-xs text-ocean/70 block">Top Practice Streak</span>
-                    <span className="font-serif text-xl font-bold text-ocean">51 Days</span>
-                    <span className="text-[11px] text-ocean/60 block">40 Days Current Streak</span>
-                  </div>
-
-                  <div className="bg-cream/60 p-3 rounded-xl border border-beige/40">
-                    <span className="text-xs text-ocean/70 block">Certifications</span>
-                    <span className="font-serif text-xl font-bold text-ocean">9 Credentials</span>
-                    <span className="text-[11px] text-ocean/60 block">SQL, Python, Java, AI</span>
-                  </div>
+                <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
+                  <span className="text-[10px] text-white/40 block">TUF MILESTONE</span>
+                  <span className="text-lg font-bold text-[#CCFF00]">166 PROBLEMS</span>
+                  <span className="text-[10px] text-white/50 block">Rank #577 Global</span>
                 </div>
 
-                {/* Direct Verification Links */}
-                <div className="pt-2">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-ocean/70 mb-2">
-                    Verified Public Records
-                  </div>
-                  <div className="flex flex-wrap gap-2 text-xs">
-                    <a
-                      href={profileData.socialLinks.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-2.5 py-1.5 rounded-lg bg-beige/30 hover:bg-beige/60 text-ocean font-medium transition-colors"
-                    >
-                      <span>LinkedIn Profile</span>
-                      <ArrowUpRight className="w-3 h-3 ml-1" />
-                    </a>
-                    <a
-                      href={profileData.socialLinks.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-2.5 py-1.5 rounded-lg bg-beige/30 hover:bg-beige/60 text-ocean font-medium transition-colors"
-                    >
-                      <span>GitHub: sasikiran211</span>
-                      <ArrowUpRight className="w-3 h-3 ml-1" />
-                    </a>
-                    <a
-                      href={profileData.socialLinks.codechef}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-2.5 py-1.5 rounded-lg bg-beige/30 hover:bg-beige/60 text-ocean font-medium transition-colors"
-                    >
-                      <span>CodeChef: sasikiran_24</span>
-                      <ArrowUpRight className="w-3 h-3 ml-1" />
-                    </a>
-                  </div>
+                <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
+                  <span className="text-[10px] text-white/40 block">PEAK STREAK</span>
+                  <span className="text-lg font-bold text-white">51 DAYS</span>
+                  <span className="text-[10px] text-white/50 block">40 Days Current</span>
+                </div>
+
+                <div className="bg-white/[0.02] p-3 rounded-xl border border-white/5">
+                  <span className="text-[10px] text-white/40 block">CREDENTIALS</span>
+                  <span className="text-lg font-bold text-[#10B981]">9 VERIFIED</span>
+                  <span className="text-[10px] text-white/50 block">SQL, Python, Java, AI</span>
                 </div>
 
               </div>
+
+              {/* Bottom Interactive Prompt */}
+              <div className="mt-3 pt-2 text-center text-[10px] font-mono text-white/40">
+                [DRAG OR MOVE CURSOR ACROSS 3D CANVAS FOR PERSPECTIVE ORBIT]
+              </div>
+
             </div>
           </div>
 
