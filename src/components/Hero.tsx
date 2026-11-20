@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowDown, FileText, Database, Cpu, Terminal, CheckCircle2 } from 'lucide-react';
 import { profileData } from '../data/profileData';
-import { ThreeCanvas } from './ThreeCanvas';
+import { BusinessCard3D } from './BusinessCard3D';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
 export const Hero: React.FC = () => {
@@ -59,7 +59,7 @@ export const Hero: React.FC = () => {
                 <Cpu className="w-3.5 h-3.5 mr-1.5 text-[#1C39BB] dark:text-blue-400" /> AI / ML Foundations
               </span>
               <span className="inline-flex items-center px-3 py-1.5 rounded-lg bg-neutral-100 dark:bg-white/[0.04] border border-neutral-200 dark:border-white/10 text-neutral-700 dark:text-neutral-300">
-                <Terminal className="w-3.5 h-3.5 mr-1.5 text-emerald-600 dark:text-emerald-400" /> 166+ DSA Problems Solved
+                <Terminal className="w-3.5 h-3.5 mr-1.5 text-emerald-600 dark:text-emerald-400" /> 171 TUF Problems Solved
               </span>
             </div>
 
@@ -120,16 +120,16 @@ export const Hero: React.FC = () => {
 
           </div>
 
-          {/* Right Column: Interactive 3D Canvas + Verified Academic Metrics */}
+          {/* Right Column: Interactive 3D Business Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl bg-white dark:bg-[#0c0c0c] border border-neutral-200 dark:border-white/10 p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
+            <div className="relative rounded-3xl bg-white dark:bg-[#0c0c0c] border border-neutral-200 dark:border-white/10 p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.06)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
               
               {/* Card Header */}
-              <div className="flex items-center justify-between pb-3 mb-2 border-b border-neutral-100 dark:border-white/10 text-xs font-sans text-neutral-500 dark:text-neutral-400">
+              <div className="flex items-center justify-between pb-3 mb-3 border-b border-neutral-100 dark:border-white/10 text-xs font-sans text-neutral-500 dark:text-neutral-400">
                 <div className="flex items-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-[#1C39BB] dark:bg-blue-400" />
                   <span className="font-heading font-semibold text-neutral-800 dark:text-neutral-200">
-                    Interactive Geometry
+                    Interactive 3D Dossier Card
                   </span>
                 </div>
                 <span className="text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1">
@@ -137,11 +137,11 @@ export const Hero: React.FC = () => {
                 </span>
               </div>
 
-              {/* 3D WebGL Canvas */}
-              <ThreeCanvas className="h-64 sm:h-72 w-full" />
+              {/* 3D Business Card */}
+              <BusinessCard3D />
 
               {/* Clean Metric Badges Grid */}
-              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-neutral-100 dark:border-white/10 text-xs">
+              <div className="grid grid-cols-2 gap-2.5 pt-3 border-t border-neutral-100 dark:border-white/10 text-xs">
                 
                 <div className="bg-neutral-50 dark:bg-white/[0.03] p-3 rounded-2xl border border-neutral-100 dark:border-white/5">
                   <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block font-sans">Academic Standing</span>
@@ -151,14 +151,14 @@ export const Hero: React.FC = () => {
 
                 <div className="bg-neutral-50 dark:bg-white/[0.03] p-3 rounded-2xl border border-neutral-100 dark:border-white/5">
                   <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block font-sans">TUF Solved</span>
-                  <span className="text-xl font-heading font-extrabold text-[#1C39BB] dark:text-blue-400">166 Problems</span>
-                  <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block">Rank #577</span>
+                  <span className="text-xl font-heading font-extrabold text-[#1C39BB] dark:text-blue-400">171 Problems</span>
+                  <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block">Rank #485 &bull; 1.33k Contribs</span>
                 </div>
 
                 <div className="bg-neutral-50 dark:bg-white/[0.03] p-3 rounded-2xl border border-neutral-100 dark:border-white/5">
                   <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block font-sans">Peak Streak</span>
                   <span className="text-xl font-heading font-extrabold text-neutral-900 dark:text-white">51 Days</span>
-                  <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block">40 Days Current</span>
+                  <span className="text-[11px] text-neutral-500 dark:text-neutral-400 block">40+ Days Current</span>
                 </div>
 
                 <div className="bg-neutral-50 dark:bg-white/[0.03] p-3 rounded-2xl border border-neutral-100 dark:border-white/5">

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#0A0D18"/>
+      <text x="480" y="60" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">SLA Verification & Status Machine</text>
+      <!-- Horizontal Pipeline -->
+      <g transform="translate(60, 160)">
+        <!-- Step 1 -->
+        <rect x="0" y="0" width="170" height="180" rx="14" fill="#141B30" stroke="#10B981" stroke-width="2"/>
+        <circle cx="85" cy="40" r="18" fill="#10B981"/>
+        <text x="85" y="45" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="12" text-anchor="middle">01</text>
+        <text x="85" y="85" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="14" text-anchor="middle">Citizen Intake</text>
+        <text x="85" y="115" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Geotagged &bull; Timestamp</text>
+        <text x="85" y="145" fill="#10B981" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">SLA: 00:05m</text>
+        <!-- Step 2 -->
+        <rect x="220" y="0" width="170" height="180" rx="14" fill="#141B30" stroke="#1C39BB" stroke-width="2"/>
+        <circle cx="305" cy="40" r="18" fill="#1C39BB"/>
+        <text x="305" y="45" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="12" text-anchor="middle">02</text>
+        <text x="305" y="85" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="14" text-anchor="middle">Deduplication</text>
+        <text x="305" y="115" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">50m Spatial Cluster</text>
+        <text x="305" y="145" fill="#3B82F6" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">SLA: 00:15m</text>
+        <!-- Step 3 -->
+        <rect x="440" y="0" width="170" height="180" rx="14" fill="#141B30" stroke="#F59E0B" stroke-width="2"/>
+        <circle cx="525" cy="40" r="18" fill="#F59E0B"/>
+        <text x="525" y="45" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="12" text-anchor="middle">03</text>
+        <text x="525" y="85" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="14" text-anchor="middle">Dispatch</text>
+        <text x="525" y="115" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Assigned to Officer</text>
+        <text x="525" y="145" fill="#F59E0B" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">SLA: 02:00h</text>
+        <!-- Step 4 -->
+        <rect x="660" y="0" width="170" height="180" rx="14" fill="#141B30" stroke="#10B981" stroke-width="2"/>
+        <circle cx="745" cy="40" r="18" fill="#10B981"/>
+        <text x="745" y="45" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="12" text-anchor="middle">04</text>
+        <text x="745" y="85" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="14" text-anchor="middle">Resolution</text>
+        <text x="745" y="115" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Photo Inspection Proof</text>
+        <text x="745" y="145" fill="#10B981" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">Citizen Closed</text>
+      </g>
+    </svg>

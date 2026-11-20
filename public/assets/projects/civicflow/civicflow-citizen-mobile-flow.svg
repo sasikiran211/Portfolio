@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#0C101F"/>
+      <!-- Header -->
+      <text x="480" y="50" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">Citizen Mobile Reporting Workflow</text>
+      <text x="480" y="74" fill="#94A3B8" font-family="Inter, sans-serif" font-size="13" text-anchor="middle">GPS coordinate capture &bull; Image verification &bull; Automated status push</text>
+      <!-- 3 Mobile Screens -->
+      <!-- Screen 1: GPS Capture -->
+      <rect x="120" y="110" width="200" height="380" rx="28" fill="#151A2E" stroke="#2B365A" stroke-width="2"/>
+      <rect x="140" y="130" width="160" height="30" rx="8" fill="#1C39BB"/>
+      <text x="220" y="150" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">1. Geotag Issue</text>
+      <circle cx="220" cy="240" r="50" fill="#1C39BB" fill-opacity="0.2"/>
+      <circle cx="220" cy="240" r="16" fill="#1C39BB"/>
+      <text x="220" y="320" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="600" font-size="12" text-anchor="middle">GPS Tagged: 16.3067°N</text>
+      <text x="220" y="340" fill="#94A3B8" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Accuracy: 3.2m</text>
+      <!-- Screen 2: Photo Capture -->
+      <rect x="380" y="110" width="200" height="380" rx="28" fill="#151A2E" stroke="#1C39BB" stroke-width="2.5"/>
+      <rect x="400" y="130" width="160" height="30" rx="8" fill="#1C39BB"/>
+      <text x="480" y="150" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">2. Photo Proof</text>
+      <rect x="404" y="180" width="152" height="160" rx="12" fill="#1E2745"/>
+      <path d="M430 290 L460 250 L490 280 L520 230 L540 290 Z" fill="#3B82F6" fill-opacity="0.4"/>
+      <text x="480" y="370" fill="#10B981" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">✓ Metadata Verified</text>
+      <!-- Screen 3: Live Pipeline -->
+      <rect x="640" y="110" width="200" height="380" rx="28" fill="#151A2E" stroke="#2B365A" stroke-width="2"/>
+      <rect x="660" y="130" width="160" height="30" rx="8" fill="#1C39BB"/>
+      <text x="740" y="150" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">3. Real-Time Tracking</text>
+      <!-- Pipeline Steps -->
+      <circle cx="680" cy="200" r="8" fill="#10B981"/>
+      <line x1="680" y1="208" x2="680" y2="252" stroke="#10B981" stroke-width="2"/>
+      <circle cx="680" cy="260" r="8" fill="#10B981"/>
+      <line x1="680" y1="268" x2="680" y2="312" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="680" cy="320" r="8" fill="#3B82F6"/>
+      <text x="700" y="204" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="11">Submitted</text>
+      <text x="700" y="264" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="11">Routed to Ward 4</text>
+      <text x="700" y="324" fill="#93C5FD" font-family="Inter, sans-serif" font-weight="600" font-size="11">Crew Dispatched</text>
+    </svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#0A0D18"/>
+      <text x="480" y="50" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">Municipal Infrastructure Distress & Resolution Metrics</text>
+      <!-- KPI Row -->
+      <g transform="translate(60, 80)">
+        <rect x="0" y="0" width="190" height="80" rx="12" fill="#141B30" stroke="#232C4A"/>
+        <text x="20" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Total Grievances</text>
+        <text x="20" y="64" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="24">1,482</text>
+        <rect x="215" y="0" width="190" height="80" rx="12" fill="#141B30" stroke="#232C4A"/>
+        <text x="235" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Resolved on Time</text>
+        <text x="235" y="64" fill="#10B981" font-family="Manrope, sans-serif" font-weight="800" font-size="24">94.2%</text>
+        <rect x="430" y="0" width="190" height="80" rx="12" fill="#141B30" stroke="#232C4A"/>
+        <text x="450" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Avg Turnaround</text>
+        <text x="450" y="64" fill="#3B82F6" font-family="Manrope, sans-serif" font-weight="800" font-size="24">18.4 hrs</text>
+        <rect x="645" y="0" width="190" height="80" rx="12" fill="#141B30" stroke="#232C4A"/>
+        <text x="665" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Duplicates Filtered</text>
+        <text x="665" y="64" fill="#F59E0B" font-family="Manrope, sans-serif" font-weight="800" font-size="24">341</text>
+      </g>
+      <!-- Chart Area -->
+      <rect x="60" y="190" width="840" height="300" rx="16" fill="#141B30" stroke="#232C4A"/>
+      <!-- Bar Chart -->
+      <g transform="translate(100, 240)">
+        <rect x="40" y="120" width="40" height="100" rx="6" fill="#1C39BB"/>
+        <text x="60" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 1</text>
+        <rect x="140" y="40" width="40" height="180" rx="6" fill="#EF4444"/>
+        <text x="160" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 2</text>
+        <rect x="240" y="90" width="40" height="130" rx="6" fill="#1C39BB"/>
+        <text x="260" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 3</text>
+        <rect x="340" y="60" width="40" height="160" rx="6" fill="#F59E0B"/>
+        <text x="360" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 4</text>
+        <rect x="440" y="150" width="40" height="70" rx="6" fill="#10B981"/>
+        <text x="460" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 5</text>
+        <rect x="540" y="80" width="40" height="140" rx="6" fill="#1C39BB"/>
+        <text x="560" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 6</text>
+        <rect x="640" y="110" width="40" height="110" rx="6" fill="#1C39BB"/>
+        <text x="660" y="240" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11" text-anchor="middle">Ward 7</text>
+      </g>
+    </svg>

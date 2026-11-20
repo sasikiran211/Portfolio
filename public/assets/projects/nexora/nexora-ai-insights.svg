@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#080C16"/>
+      <text x="480" y="50" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">Automated Causal Anomaly Detection &amp; Warnings</text>
+      <g transform="translate(60, 90)">
+        <rect x="0" y="0" width="840" height="400" rx="16" fill="#131B32" stroke="#1E293B"/>
+        <!-- Alert 1 -->
+        <rect x="40" y="40" width="760" height="90" rx="12" fill="#EF4444" fill-opacity="0.1" stroke="#EF4444"/>
+        <text x="70" y="75" fill="#EF4444" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Anomaly: 42% Drop in Checkout Completion (Mobile Safari)</text>
+        <text x="70" y="102" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Root Cause: Payment gateway timeout following v2.4.1 client build deployment at 14:22 UTC.</text>
+        <!-- Alert 2 -->
+        <rect x="40" y="150" width="760" height="90" rx="12" fill="#F59E0B" fill-opacity="0.1" stroke="#F59E0B"/>
+        <text x="70" y="185" fill="#F59E0B" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Warning: Cloud Compute Spike in APAC Region (+68%)</text>
+        <text x="70" y="212" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Recommendation: Scale down idle ETL workers or adjust batch partitioning window to off-peak hours.</text>
+        <!-- Alert 3 -->
+        <rect x="40" y="260" width="760" height="90" rx="12" fill="#10B981" fill-opacity="0.1" stroke="#10B981"/>
+        <text x="70" y="295" fill="#10B981" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Positive Anomaly: Viral Organic Traffic from Tech Publication</text>
+        <text x="70" y="322" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">+310% new visitor acquisition with zero degradation in database latency.</text>
+      </g>
+    </svg>

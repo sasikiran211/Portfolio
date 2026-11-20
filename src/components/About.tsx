@@ -56,7 +56,7 @@ export const About: React.FC = () => {
               </div>
               <div className="flex items-start space-x-2 text-neutral-700 dark:text-neutral-300">
                 <CheckCircle2 className="w-4 h-4 text-[#1C39BB] dark:text-blue-400 flex-shrink-0 mt-0.5" />
-                <span><strong className="text-neutral-900 dark:text-white">Algorithmic Consistency:</strong> 166+ problems solved across Take U Forward and platforms.</span>
+                <span><strong className="text-neutral-900 dark:text-white">Algorithmic Consistency:</strong> 171 problems solved across Take U Forward and platforms.</span>
               </div>
               <div className="flex items-start space-x-2 text-neutral-700 dark:text-neutral-300">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />

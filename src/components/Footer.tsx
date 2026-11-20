@@ -1,9 +1,13 @@
 import React from 'react';
-import { ArrowUp, Terminal } from 'lucide-react';
+import { ArrowUp, Terminal, Lock } from 'lucide-react';
 import { profileData } from '../data/profileData';
 import { GithubIcon, LinkedinIcon } from './icons/SocialIcons';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenAdmin?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -108,8 +112,18 @@ export const Footer: React.FC = () => {
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
 
-            <div className="text-[11px] text-neutral-500 dark:text-neutral-400 md:text-right mt-4">
-              <span>Updated November 2026</span>
+            <div className="text-[11px] text-neutral-500 dark:text-neutral-400 md:text-right mt-4 space-y-1">
+              <div>Updated November 2026</div>
+              {onOpenAdmin && (
+                <button
+                  onClick={onOpenAdmin}
+                  className="inline-flex items-center space-x-1 text-neutral-400 hover:text-[#1C39BB] dark:hover:text-blue-400 transition-colors"
+                  title="Private Admin Settings (PIN Protected)"
+                >
+                  <Lock className="w-3 h-3" />
+                  <span>Admin Settings</span>
+                </button>
+              )}
             </div>
           </div>
 

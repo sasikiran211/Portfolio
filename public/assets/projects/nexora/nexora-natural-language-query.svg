@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#080C16"/>
+      <text x="480" y="50" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">Text-to-SQL Semantic Mapping &amp; Execution</text>
+      <g transform="translate(60, 90)">
+        <rect x="0" y="0" width="840" height="400" rx="16" fill="#131B32" stroke="#1E293B"/>
+        <!-- User Prompt -->
+        <text x="40" y="45" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">User Prompt (Plain English):</text>
+        <rect x="40" y="60" width="760" height="50" rx="8" fill="#1E293B"/>
+        <text x="60" y="92" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="14">"Show me the top 5 customer segments by retention rate who spent &gt; $50K in the last 6 months."</text>
+        <!-- Synthesized SQL -->
+        <text x="40" y="150" fill="#38BDF8" font-family="Inter, sans-serif" font-size="12">Auto-Generated Optimized SQL (PostgreSQL):</text>
+        <rect x="40" y="165" width="760" height="150" rx="8" fill="#0B1120"/>
+        <text x="60" y="195" fill="#93C5FD" font-family="Courier, monospace" font-size="12">SELECT c.segment_name, COUNT(c.customer_id) as total_accounts,</text>
+        <text x="60" y="215" fill="#93C5FD" font-family="Courier, monospace" font-size="12">       ROUND(AVG(c.retention_rate), 2) as avg_retention,</text>
+        <text x="60" y="235" fill="#93C5FD" font-family="Courier, monospace" font-size="12">       SUM(t.amount) as total_spend</text>
+        <text x="60" y="255" fill="#93C5FD" font-family="Courier, monospace" font-size="12">FROM customers c JOIN transactions t ON c.id = t.customer_id</text>
+        <text x="60" y="275" fill="#93C5FD" font-family="Courier, monospace" font-size="12">WHERE t.transaction_date &gt;= NOW() - INTERVAL '6 MONTH'</text>
+        <text x="60" y="295" fill="#93C5FD" font-family="Courier, monospace" font-size="12">GROUP BY c.segment_name HAVING SUM(t.amount) &gt; 50000 ORDER BY avg_retention DESC LIMIT 5;</text>
+        <!-- Execution status -->
+        <rect x="40" y="335" width="200" height="30" rx="6" fill="#10B981" fill-opacity="0.2"/>
+        <text x="140" y="355" fill="#10B981" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">✓ Executed in 12ms (Cached)</text>
+      </g>
+    </svg>

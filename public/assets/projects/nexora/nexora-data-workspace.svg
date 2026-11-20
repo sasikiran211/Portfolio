@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#080C16"/>
+      <text x="480" y="50" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="22" text-anchor="middle">Multi-Dimensional Visual Analytics Workspace</text>
+      <!-- Layout 2 cols -->
+      <g transform="translate(60, 90)">
+        <rect x="0" y="0" width="400" height="400" rx="16" fill="#131B32" stroke="#1E293B"/>
+        <text x="24" y="36" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Revenue by Sector Breakdown</text>
+        <circle cx="200" cy="220" r="100" fill="#1E293B"/>
+        <path d="M200 120 A 100 100 0 0 1 300 220 L 200 220 Z" fill="#1C39BB"/>
+        <path d="M300 220 A 100 100 0 0 1 180 320 L 200 220 Z" fill="#38BDF8"/>
+        <path d="M180 320 A 100 100 0 0 1 200 120 L 200 220 Z" fill="#10B981"/>
+        
+        <rect x="440" y="0" width="400" height="400" rx="16" fill="#131B32" stroke="#1E293B"/>
+        <text x="464" y="36" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Pipeline Conversion Funnel</text>
+        <polygon points="480,80 800,80 740,150 540,150" fill="#1C39BB"/>
+        <polygon points="540,160 740,160 700,230 580,230" fill="#38BDF8"/>
+        <polygon points="580,240 700,240 660,310 620,310" fill="#10B981"/>
+      </g>
+    </svg>

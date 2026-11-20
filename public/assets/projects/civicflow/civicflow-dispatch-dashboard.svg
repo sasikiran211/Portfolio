@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#0A0D18"/>
+      <!-- Header Bar -->
+      <rect x="0" y="0" width="960" height="56" fill="#111827"/>
+      <circle cx="28" cy="28" r="10" fill="#1C39BB"/>
+      <text x="48" y="33" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="16">CIVIC FLOW // MUNICIPAL DISPATCH OPS</text>
+      <rect x="800" y="16" width="136" height="24" rx="12" fill="#10B981" fill-opacity="0.2"/>
+      <text x="868" y="32" fill="#10B981" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">● LIVE DISPATCH</text>
+      <!-- Map Visual Left (60%) -->
+      <rect x="24" y="80" width="560" height="436" rx="16" fill="#151A2D" stroke="#232C4A" stroke-width="1.5"/>
+      <!-- Grid Lines -->
+      <path d="M24 160 H584 M24 240 H584 M24 320 H584 M24 400 H584 M140 80 V516 M260 80 V516 M380 80 V516 M500 80 V516" stroke="#1E2745" stroke-width="1"/>
+      <!-- Heatmap zones -->
+      <circle cx="220" cy="210" r="70" fill="#EF4444" fill-opacity="0.25"/>
+      <circle cx="220" cy="210" r="40" fill="#EF4444" fill-opacity="0.45"/>
+      <circle cx="220" cy="210" r="12" fill="#EF4444"/>
+      <circle cx="410" cy="330" r="85" fill="#F59E0B" fill-opacity="0.25"/>
+      <circle cx="410" cy="330" r="45" fill="#F59E0B" fill-opacity="0.45"/>
+      <circle cx="410" cy="330" r="12" fill="#F59E0B"/>
+      <!-- Pin Labels -->
+      <rect x="160" y="140" width="120" height="28" rx="6" fill="#111827" stroke="#EF4444"/>
+      <text x="220" y="158" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="10" text-anchor="middle">Ward 4: Pothole Cluster</text>
+      <!-- Ticket Queue Right (40%) -->
+      <rect x="608" y="80" width="328" height="436" rx="16" fill="#151A2D" stroke="#232C4A" stroke-width="1.5"/>
+      <text x="632" y="114" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Active Incident Ledger</text>
+      <!-- Ticket 1 -->
+      <rect x="628" y="132" width="288" height="80" rx="10" fill="#1A213A" stroke="#2C375C"/>
+      <text x="644" y="156" fill="#93C5FD" font-family="Inter, sans-serif" font-weight="600" font-size="12">#CF-8921 &bull; Sanitation Drainage</text>
+      <text x="644" y="176" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">Priority: High &bull; Auto-Routed to Public Works</text>
+      <rect x="644" y="188" width="70" height="16" rx="8" fill="#10B981" fill-opacity="0.2"/>
+      <text x="679" y="200" fill="#10B981" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">DISPATCHED</text>
+      <!-- Ticket 2 -->
+      <rect x="628" y="224" width="288" height="80" rx="10" fill="#1A213A" stroke="#2C375C"/>
+      <text x="644" y="248" fill="#93C5FD" font-family="Inter, sans-serif" font-weight="600" font-size="12">#CF-8920 &bull; Streetlight Failure</text>
+      <text x="644" y="268" fill="#94A3B8" font-family="Inter, sans-serif" font-size="11">Priority: Medium &bull; Electrical Division</text>
+      <rect x="644" y="280" width="70" height="16" rx="8" fill="#F59E0B" fill-opacity="0.2"/>
+      <text x="679" y="292" fill="#F59E0B" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">INSPECTION</text>
+    </svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#080C16"/>
+      <rect x="0" y="0" width="960" height="56" fill="#0F172A"/>
+      <text x="40" y="34" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="18">NEXORA AI // DATA ANALYTICS &amp; INSIGHT ENGINE</text>
+      <!-- KPIs -->
+      <g transform="translate(40, 80)">
+        <rect x="0" y="0" width="205" height="90" rx="12" fill="#131B32" stroke="#1E293B"/>
+        <text x="20" y="30" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Natural Language Queries</text>
+        <text x="20" y="66" fill="#38BDF8" font-family="Manrope, sans-serif" font-weight="800" font-size="26">42,890</text>
+        <rect x="225" y="0" width="205" height="90" rx="12" fill="#131B32" stroke="#1E293B"/>
+        <text x="245" y="30" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">SQL Synthesis Accuracy</text>
+        <text x="245" y="66" fill="#10B981" font-family="Manrope, sans-serif" font-weight="800" font-size="26">98.6%</text>
+        <rect x="450" y="0" width="205" height="90" rx="12" fill="#131B32" stroke="#1E293B"/>
+        <text x="470" y="30" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Avg Query Latency</text>
+        <text x="470" y="66" fill="#1C39BB" font-family="Manrope, sans-serif" font-weight="800" font-size="26">142 ms</text>
+        <rect x="675" y="0" width="205" height="90" rx="12" fill="#131B32" stroke="#1E293B"/>
+        <text x="695" y="30" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Data Connectors</text>
+        <text x="695" y="66" fill="#F59E0B" font-family="Manrope, sans-serif" font-weight="800" font-size="26">14 Connected</text>
+      </g>
+      <!-- Visuals Area -->
+      <rect x="40" y="190" width="560" height="310" rx="16" fill="#131B32" stroke="#1E293B"/>
+      <text x="65" y="225" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Autonomous Trend Synthesis</text>
+      <path d="M70 450 Q 180 390, 280 320 T 560 250" fill="none" stroke="#38BDF8" stroke-width="3"/>
+      <!-- Right AI Panel -->
+      <rect x="620" y="190" width="300" height="310" rx="16" fill="#131B32" stroke="#1E293B"/>
+      <text x="645" y="225" fill="#38BDF8" font-family="Manrope, sans-serif" font-weight="700" font-size="15">AI Synthesized Insight</text>
+      <rect x="640" y="245" width="260" height="110" rx="8" fill="#1E293B"/>
+      <text x="655" y="275" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12">"Q3 Enterprise revenue rose 18.2%</text>
+      <text x="655" y="295" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12">driven by multi-year renewals in</text>
+      <text x="655" y="315" fill="#F8FAFC" font-family="Inter, sans-serif" font-size="12">healthcare and logistics verticals."</text>
+    </svg>

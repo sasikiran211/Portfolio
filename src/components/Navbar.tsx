@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sun, Moon, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Sun, Moon, ArrowUpRight, Lock } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   onNavigate?: (sectionId: string) => void;
+  onOpenAdmin?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin }) => {
   const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -100,28 +101,44 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 bg-neutral-100/80 dark:bg-white/[0.04] rounded-full p-1 border border-neutral-200/60 dark:border-white/5">
+          <nav className="hidden lg:flex items-center space-x-1 font-heading text-xs">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
               return (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-heading font-medium tracking-wide transition-all ${
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.id);
+                  }}
+                  className={`px-3.5 py-1.5 rounded-full transition-all font-semibold ${
                     isActive
-                      ? 'bg-[#1C39BB] text-white shadow-sm'
-                      : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-white/70 dark:hover:bg-white/5'
+                      ? 'bg-neutral-900 text-white dark:bg-white dark:text-black shadow-sm'
+                      : 'text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/[0.06]'
                   }`}
                 >
                   {item.label}
-                </button>
+                </a>
               );
             })}
           </nav>
 
-          {/* Controls: Theme Switcher & Contact Button */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* Controls: Admin, Theme Switcher & Contact Button */}
+          <div className="flex items-center space-x-2 sm:space-x-2.5">
             
+            {/* Discreet Admin Lock Button */}
+            {onOpenAdmin && (
+              <button
+                onClick={onOpenAdmin}
+                aria-label="Open Admin Settings"
+                title="Admin Settings (Ctrl+Shift+A)"
+                className="p-2 rounded-full bg-neutral-100 dark:bg-white/[0.06] border border-neutral-200 dark:border-white/10 text-neutral-600 dark:text-neutral-300 hover:text-[#1C39BB] dark:hover:text-blue-400 hover:border-[#1C39BB]/40 transition-all focus:outline-none"
+              >
+                <Lock className="w-4 h-4" />
+              </button>
+            )}
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
@@ -180,10 +197,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`px-4 py-2.5 rounded-xl text-xs font-heading font-medium tracking-wide text-left transition-all ${
+                  className={`text-left px-3.5 py-2.5 rounded-xl text-xs font-heading font-semibold transition-all ${
                     isActive
-                      ? 'bg-[#1C39BB] text-white font-semibold shadow-sm'
-                      : 'text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-white/5 border border-neutral-200/50 dark:border-white/5'
+                      ? 'bg-[#1C39BB] text-white'
+                      : 'bg-neutral-100 dark:bg-white/5 text-neutral-800 dark:text-neutral-200 hover:bg-neutral-200'
                   }`}
                 >
                   {item.label}
@@ -192,25 +209,20 @@ export const Navbar: React.FC<NavbarProps> = () => {
             })}
           </div>
 
-          <div className="mt-4 pt-3 border-t border-neutral-200/80 dark:border-white/10 flex items-center gap-2">
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('contact');
-              }}
-              className="flex-1 text-center py-2.5 px-4 rounded-xl bg-[#1C39BB] text-white font-heading font-semibold text-xs hover:bg-[#152c99]"
-            >
-              Contact & Inquiry
-            </a>
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="p-2.5 rounded-xl bg-neutral-100 dark:bg-white/[0.08] text-neutral-700 dark:text-neutral-200 border border-neutral-200 dark:border-white/10"
-            >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-[#1C39BB]" />}
-            </button>
-          </div>
+          {onOpenAdmin && (
+            <div className="mt-4 pt-3 border-t border-neutral-200 dark:border-white/10">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenAdmin();
+                }}
+                className="w-full py-2.5 rounded-xl bg-neutral-100 dark:bg-white/5 text-xs font-heading font-semibold text-neutral-700 dark:text-neutral-300 flex items-center justify-center space-x-2"
+              >
+                <Lock className="w-3.5 h-3.5 text-[#1C39BB] dark:text-blue-400" />
+                <span>Private Admin Settings</span>
+              </button>
+            </div>
+          )}
         </div>
       )}
     </header>

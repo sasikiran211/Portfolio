@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -12,8 +12,24 @@ import { Resume } from './components/Resume';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
+import { AdminSettings } from './components/admin/AdminSettings';
 
 export const App: React.FC = () => {
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Shortcut Ctrl + Shift + A to open Admin Settings
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        setIsAdminOpen(prev => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <ThemeProvider>
       <CustomCursor />
@@ -25,8 +41,8 @@ export const App: React.FC = () => {
           {/* Subtle Top Persian Blue Ambient Glow */}
           <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-gradient-to-r from-transparent via-[#1C39BB]/40 to-transparent pointer-events-none z-20" />
 
-          {/* Sticky Navigation with Theme Switcher */}
-          <Navbar />
+          {/* Sticky Navigation with Theme Switcher & Admin trigger */}
+          <Navbar onOpenAdmin={() => setIsAdminOpen(true)} />
 
           {/* 8 Core Layout Sections in Exact Order */}
           <main className="flex-grow relative z-10">
@@ -42,7 +58,10 @@ export const App: React.FC = () => {
           </main>
 
           {/* Footer */}
-          <Footer />
+          <Footer onOpenAdmin={() => setIsAdminOpen(true)} />
+
+          {/* Private Admin Settings Modal */}
+          <AdminSettings isOpen={isAdminOpen} onClose={() => setIsAdminOpen(false)} />
 
         </div>
 

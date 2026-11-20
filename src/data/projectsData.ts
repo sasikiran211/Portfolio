@@ -1,3 +1,9 @@
+export interface ProjectImage {
+  src: string;
+  title: string;
+  description: string;
+}
+
 export interface Project {
   id: string;
   projectNumber: string;
@@ -18,6 +24,10 @@ export interface Project {
   liveDemoUrl?: string;
   metrics?: { label: string; value: string }[];
   accentNote?: string;
+  thumbnail: string;
+  galleryImages: ProjectImage[];
+  architectureSummary?: string;
+  dataFlowSteps?: string[];
 }
 
 export const projectsData: Project[] = [
@@ -37,6 +47,42 @@ export const projectsData: Project[] = [
       "Municipal grievance tracking frequently suffers from bureaucratic opacity, duplicate complaints without geospatial deduplication, and lack of citizen visibility into resolution timelines.",
     solution:
       "Engineered a full-stack, data-driven municipal workflow that aggregates citizen incident submissions, verifies categorical severity, routes tickets to corresponding administrative departments, and surfaces public progress analytics.",
+    thumbnail: "/assets/projects/civicflow/civicflow-dispatch-dashboard.svg",
+    galleryImages: [
+      {
+        src: "/assets/projects/civicflow/civicflow-dispatch-dashboard.svg",
+        title: "Municipal Dispatch Operations Center",
+        description: "Administrative control board displaying active incidents across sanitation, roads, and electrical grids with urgent priority queues."
+      },
+      {
+        src: "/assets/projects/civicflow/civicflow-citizen-mobile-flow.svg",
+        title: "Citizen Incident Reporting Flow",
+        description: "Mobile-optimized submission sequence enabling GPS verification, photo evidence upload, and automated receipt generation."
+      },
+      {
+        src: "/assets/projects/civicflow/civicflow-system-architecture.svg",
+        title: "Full-Stack System Architecture & Data Flow",
+        description: "End-to-end data pipeline from client React UI, Flask REST API gateway, PostgreSQL spatial persistence, and department dispatch logic."
+      },
+      {
+        src: "/assets/projects/civicflow/civicflow-status-pipeline.svg",
+        title: "4-Stage Resolution Pipeline",
+        description: "Audit trail transitioning tickets through Submitted, Verified, In Progress, and Resolved with citizen SMS/email notification webhooks."
+      },
+      {
+        src: "/assets/projects/civicflow/civicflow-analytics-heatmap.svg",
+        title: "Geospatial Distress Cluster Heatmap",
+        description: "Spatial clustering identifying municipal failure hotzones to assist proactive public works budgeting."
+      }
+    ],
+    architectureSummary:
+      "Client UI communicates via JWT-authenticated REST APIs to a Python Flask backend. Geospatial incidents are stored in PostgreSQL with PostGIS coordinates, and dispatched through an event-driven router to municipal department queues.",
+    dataFlowSteps: [
+      "Citizen captures localized GPS incident with categorized distress metadata.",
+      "Spatial deduplication engine checks existing active tickets within a 50-meter radius.",
+      "Verified incident routed to responsible municipal department queue (Sanitation, Roads, Electrical).",
+      "Field engineers update resolution milestones, updating real-time citizen tracking ledger."
+    ],
     features: [
       "Geospatial Issue Logging: Incident pinning with verification coordinates and photo attachments",
       "Automated Departmental Dispatch: Rule-based routing to sanitation, roads, and electrical divisions",
@@ -76,6 +122,42 @@ export const projectsData: Project[] = [
       "SaaS and digital retail platforms lose substantial revenue because churn risk is evaluated reactively after customer cancellation rather than detected through preliminary usage anomalies.",
     solution:
       "Built a unified cohort and RFM (Recency, Frequency, Monetary) analytics engine that stratifies users into risk tiers, computes churn probabilities, and outputs actionable commercial retention recommendations.",
+    thumbnail: "/assets/projects/retainiq/retainiq-executive-dashboard.svg",
+    galleryImages: [
+      {
+        src: "/assets/projects/retainiq/retainiq-executive-dashboard.svg",
+        title: "Executive Retention & Revenue Dashboard",
+        description: "C-suite operational dashboard tracking monthly churn rates, risk tier distributions, and projected revenue at risk."
+      },
+      {
+        src: "/assets/projects/retainiq/retainiq-customer-segmentation.svg",
+        title: "RFM Behavioral Customer Segmentation",
+        description: "2D behavioral cluster plot stratifying user cohorts into Champions, Loyal, Potential, and At-Risk tiers based on transactional velocity."
+      },
+      {
+        src: "/assets/projects/retainiq/retainiq-churn-drivers.svg",
+        title: "Key Churn Risk Factor Attribution",
+        description: "Machine learning feature importance ranking contract stability, ticket turnaround time, and usage decay as primary churn catalysts."
+      },
+      {
+        src: "/assets/projects/retainiq/retainiq-cohort-heatmap.svg",
+        title: "Longitudinal Cohort Retention Matrix",
+        description: "Monthly customer vintage survival curves monitoring Month 0 through Month 5 retention drop-offs."
+      },
+      {
+        src: "/assets/projects/retainiq/retainiq-intervention-workflow.svg",
+        title: "Automated Retention Playbook Workflow",
+        description: "Event-triggered mitigation pipelines orchestrating VIP incentives, CSM outreach, and automated feedback loops."
+      }
+    ],
+    architectureSummary:
+      "Historical subscription transactions are transformed using Python (Pandas/NumPy) and SQL into behavioral RFM scores. Risk probabilities are modeled using logistic classifiers and surfaced through executive Power BI / React telemetry.",
+    dataFlowSteps: [
+      "Transactional and event stream ingestion from subscription database.",
+      "RFM feature computation: Days since last activity, 90-day order frequency, cumulative ARR.",
+      "Risk classification tiering (Low, Moderate, High, Critical) with anomaly flags.",
+      "Actionable retention playbooks automatically delivered to commercial account managers."
+    ],
     features: [
       "Customer Churn-Risk Detection: Early warning indicators derived from activity decay and engagement drops",
       "RFM Behavioral Segmentation: Automated classification into Champions, Loyal Customers, and At-Risk Tiers",
@@ -123,6 +205,42 @@ export const projectsData: Project[] = [
       "Non-technical business decision-makers face steep friction when drafting SQL queries or navigating multi-layered BI dashboards to extract ad-hoc business answers quickly.",
     solution:
       "Engineered an interactive analytics cockpit combining dynamic multidimensional charting with an LLM-assisted query layer that translates natural inquiries into verified SQL aggregations and executive takeaways.",
+    thumbnail: "/assets/projects/nexora/nexora-command-center.svg",
+    galleryImages: [
+      {
+        src: "/assets/projects/nexora/nexora-command-center.svg",
+        title: "Unified Executive Command Center",
+        description: "Real-time KPI telemetry monitoring ARR, conversion rates, and active operational capacity with visual trend indicators."
+      },
+      {
+        src: "/assets/projects/nexora/nexora-natural-language-query.svg",
+        title: "Natural Language SQL Interrogation Engine",
+        description: "Conversational prompt interface compiling English business questions into syntactically validated SQL expressions and chart plots."
+      },
+      {
+        src: "/assets/projects/nexora/nexora-data-workspace.svg",
+        title: "Enterprise Multi-Source Data Workspace",
+        description: "Connector catalog facilitating seamless extraction across PostgreSQL, Snowflake, BigQuery, and enterprise CSV uploads."
+      },
+      {
+        src: "/assets/projects/nexora/nexora-ai-insights.svg",
+        title: "Machine Learning Anomaly Feed",
+        description: "Continuous anomaly scanner surfacing margin drift, customer acquisition cost spikes, and regional underperformance alerts."
+      },
+      {
+        src: "/assets/projects/nexora/nexora-export-reporting.svg",
+        title: "Automated Executive Reporting & Delivery",
+        description: "Scheduled delivery system formatting visual PDF dossiers and interactive digests for board stakeholders."
+      }
+    ],
+    architectureSummary:
+      "FastAPI orchestrates queries between enterprise relational stores and LLM prompt-grounding layers. Validated SQL runs in sandboxed read-only replicas, streaming sanitized JSON responses to a React/TypeScript interface.",
+    dataFlowSteps: [
+      "User issues natural language question (e.g. 'Show me top 5 customer segments by Q3 revenue').",
+      "AI reasoning engine matches database schema catalog and generates parameterized SQL.",
+      "Read-only query executed with sub-second execution limits against database replica.",
+      "Interactive data visualizations and auto-generated textual takeaways rendered simultaneously."
+    ],
     features: [
       "Interactive Analytics Cockpit: Filterable multi-metric KPI cards, time-series projections, and categorical drill-downs",
       "AI-Assisted Insights Layer: Automated plain-text summaries explaining data spikes, anomalies, and outliers",

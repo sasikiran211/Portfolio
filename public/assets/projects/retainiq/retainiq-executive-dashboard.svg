@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+      <rect width="960" height="540" fill="#090D1A"/>
+      <rect x="0" y="0" width="960" height="56" fill="#111827"/>
+      <text x="40" y="34" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="800" font-size="18">RetainIQ // PREDICTIVE RETENTION INTELLIGENCE</text>
+      <!-- Top Gauges -->
+      <g transform="translate(40, 80)">
+        <rect x="0" y="0" width="200" height="100" rx="14" fill="#131B32" stroke="#253259"/>
+        <text x="20" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Overall Churn Risk</text>
+        <text x="20" y="70" fill="#EF4444" font-family="Manrope, sans-serif" font-weight="800" font-size="28">14.2%</text>
+        <text x="110" y="70" fill="#10B981" font-family="Inter, sans-serif" font-size="11">↓ 2.4% MoM</text>
+
+        <rect x="225" y="0" width="200" height="100" rx="14" fill="#131B32" stroke="#253259"/>
+        <text x="245" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">ARR at High Risk</text>
+        <text x="245" y="70" fill="#F59E0B" font-family="Manrope, sans-serif" font-weight="800" font-size="28">$182.4K</text>
+
+        <rect x="450" y="0" width="200" height="100" rx="14" fill="#131B32" stroke="#253259"/>
+        <text x="470" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Interventions Active</text>
+        <text x="470" y="70" fill="#1C39BB" font-family="Manrope, sans-serif" font-weight="800" font-size="28">89</text>
+
+        <rect x="675" y="0" width="205" height="100" rx="14" fill="#131B32" stroke="#253259"/>
+        <text x="695" y="32" fill="#94A3B8" font-family="Inter, sans-serif" font-size="12">Model Precision (AUC)</text>
+        <text x="695" y="70" fill="#10B981" font-family="Manrope, sans-serif" font-weight="800" font-size="28">0.912</text>
+      </g>
+      <!-- Main Visual Graph -->
+      <rect x="40" y="210" width="540" height="290" rx="16" fill="#131B32" stroke="#253259"/>
+      <text x="64" y="245" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Predictive Retention Trajectory</text>
+      <path d="M70 440 Q 200 400, 320 330 T 540 280" fill="none" stroke="#10B981" stroke-width="3"/>
+      <path d="M70 440 Q 200 420, 320 410 T 540 430" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="4"/>
+      <!-- Right List -->
+      <rect x="605" y="210" width="315" height="290" rx="16" fill="#131B32" stroke="#253259"/>
+      <text x="625" y="245" fill="#FFFFFF" font-family="Manrope, sans-serif" font-weight="700" font-size="15">Top Risk Accounts</text>
+      <rect x="625" y="265" width="275" height="50" rx="8" fill="#1B2545"/>
+      <text x="640" y="295" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12">Apex Enterprise &bull; 92% Risk</text>
+      <rect x="625" y="325" width="275" height="50" rx="8" fill="#1B2545"/>
+      <text x="640" y="355" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12">NovaTech Solutions &bull; 84% Risk</text>
+      <rect x="625" y="385" width="275" height="50" rx="8" fill="#1B2545"/>
+      <text x="640" y="415" fill="#FFFFFF" font-family="Inter, sans-serif" font-size="12">CloudScale Global &bull; 78% Risk</text>
+    </svg>

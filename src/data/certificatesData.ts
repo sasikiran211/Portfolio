@@ -10,6 +10,8 @@ export interface Certificate {
   verificationUrl?: string;
   summary: string;
   badgeText: string;
+  previewImage: string;
+  pdfUrl?: string;
 }
 
 export const certificatesData: Certificate[] = [
@@ -22,7 +24,8 @@ export const certificatesData: Certificate[] = [
     completionDate: "Verified Credential",
     skills: ["SQL", "Relational Queries", "Multi-Table Joins", "Aggregations", "Subqueries"],
     credentialId: "Infosys Springboard",
-    verificationUrl: "",
+    verificationUrl: "https://infyspringboard.onwingspan.com",
+    previewImage: "/assets/certificates/sql-case-study-infosys.svg",
     summary:
       "Enterprise SQL case study program requiring complex query construction, relational algebra, grouping operations, and analytical data extraction.",
     badgeText: "Enterprise Workshop"
@@ -37,6 +40,7 @@ export const certificatesData: Certificate[] = [
     skills: ["Python Core", "Control Flow", "Data Structures", "Functions", "OOP Basics"],
     credentialId: "LinkedIn Learning",
     verificationUrl: "https://www.linkedin.com/in/SasikiranKakumani",
+    previewImage: "/assets/certificates/learning-python-linkedin.svg",
     summary:
       "Foundational certification validating Python programming fundamentals, error handling, modular code structures, and standard library mastery.",
     badgeText: "Verified Curriculum"
@@ -51,6 +55,7 @@ export const certificatesData: Certificate[] = [
     skills: ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Exploratory Analysis"],
     credentialId: "LinkedIn Learning",
     verificationUrl: "https://www.linkedin.com/in/SasikiranKakumani",
+    previewImage: "/assets/certificates/python-libraries-data-science-linkedin.svg",
     summary:
       "Technical curriculum in numerical computing, DataFrame vectorization, statistical distributions, and visual analytics using Python's scientific ecosystem.",
     badgeText: "Specialization"
@@ -64,7 +69,8 @@ export const certificatesData: Certificate[] = [
     completionDate: "Verified Credential",
     skills: ["Prompt Engineering", "Large Language Models", "In-Context Learning", "AI Guardrails"],
     credentialId: "AWS Training",
-    verificationUrl: "",
+    verificationUrl: "https://aws.amazon.com/training/",
+    previewImage: "/assets/certificates/career-essentials-generative-ai.svg",
     summary:
       "AWS training validating prompt framing techniques, chain-of-thought orchestration, model latency tuning, and generative AI system integration.",
     badgeText: "Cloud AI"
@@ -78,7 +84,8 @@ export const certificatesData: Certificate[] = [
     completionDate: "Verified Credential",
     skills: ["Data Analytics", "Generative AI in Analytics", "Executive Telemetry", "Trend Synthesis"],
     credentialId: "Tata / Forage Simulation",
-    verificationUrl: "",
+    verificationUrl: "https://www.theforage.com",
+    previewImage: "/assets/certificates/what-is-generative-ai.svg",
     summary:
       "Industry simulation analyzing enterprise data patterns, evaluating business metrics with AI tools, and presenting executive findings.",
     badgeText: "Job Simulation"
@@ -92,7 +99,8 @@ export const certificatesData: Certificate[] = [
     completionDate: "8-Week Comprehensive Training",
     skills: ["Full Stack Engineering", "Frontend & Backend", "Relational Databases", "AI Tooling", "REST APIs"],
     credentialId: "Internshala Trainings",
-    verificationUrl: "",
+    verificationUrl: "https://trainings.internshala.com",
+    previewImage: "/assets/certificates/cloud-digital-leader-vvitu.svg",
     summary:
       "Eight-week comprehensive development program building full-stack web applications, database integrations, responsive interfaces, and AI tool integrations.",
     badgeText: "8-Week Intensive"
@@ -107,6 +115,7 @@ export const certificatesData: Certificate[] = [
     skills: ["Java", "OOP Architecture", "Collections Framework", "Exception Handling"],
     credentialId: "HackerRank Verified",
     verificationUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
+    previewImage: "/assets/certificates/hackerrank-java-basic.svg",
     summary:
       "Skill assessment validating core Java language competency, algorithmic thinking, inheritance hierarchy, and object-oriented architecture.",
     badgeText: "Verified Assessment"
@@ -120,7 +129,8 @@ export const certificatesData: Certificate[] = [
     completionDate: "Verified Credential",
     skills: ["Schema Design", "Complex Joins", "Window Functions", "Query Performance", "Aggregations"],
     credentialId: "Course Certificate",
-    verificationUrl: "",
+    verificationUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
+    previewImage: "/assets/certificates/hackerrank-sql-basic.svg",
     summary:
       "Rigorous database querying course covering relational normalization, schema indexing, multi-table aggregations, and query optimization.",
     badgeText: "Query Mastery"
@@ -135,6 +145,7 @@ export const certificatesData: Certificate[] = [
     skills: ["Python 3", "Data Structures", "String Processing", "Algorithms", "Comprehensions"],
     credentialId: "HackerRank Verified",
     verificationUrl: "https://www.hackerrank.com/profile/Sasikiran_24",
+    previewImage: "/assets/certificates/hackerrank-python-basic.svg",
     summary:
       "Standardized skill assessment validating Pythonic problem solving, algorithmic manipulations, and functional programming capabilities.",
     badgeText: "Verified Assessment"
